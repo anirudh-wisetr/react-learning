@@ -1,6 +1,6 @@
 import React, { createContext, useState } from 'react';
 import './App.css';
-import CompoA from './CompoentA';
+import CompoA from './CompoenetA';
 import Header from './Header';
 
 const AppState = createContext()
@@ -16,11 +16,11 @@ function App() {
         <Header />
         <div className='main-coMPO'>
           <CompoA />
-        </div>;
+        </div>
       </AppState.Provider>
     </>
   );
 }
 
-export default App;
+export default App
 export { AppState };
