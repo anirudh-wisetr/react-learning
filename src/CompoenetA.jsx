@@ -1,6 +1,6 @@
 
 import React from "react";
-import CompoB from "./ComponentB";
+import CompoB from "./ComponentB"
 
 function CompoA() {
     return (
@@ -10,4 +10,4 @@ function CompoA() {
         </>
     )
 }
-export default CompoA;
+export default CompoA

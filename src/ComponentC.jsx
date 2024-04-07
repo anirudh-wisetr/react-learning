@@ -12,10 +12,10 @@ function CompoC() {
                 <h1> Component C</h1>
                 <div className="comp">{appData.data}</div>
                 <div >Name: {appData.name.name}</div>
-                <div className="comp">Age: {appData.name.age}</div>;
+                <div className="comp">Age: {appData.name.age}</div>
 
             </div>
         </>
     )
 }
-export default CompoC;
+export default CompoC
