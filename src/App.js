@@ -1,26 +1,9 @@
-import React, { createContext, useState } from 'react';
-import './App.css';
-import CompoA from './CompoenetA';
-import Header from './Header';
+import React from 'react'
 
-const AppState = createContext()
-
-function App() {
-
-  const [data, setData] = useState("Hello,")
-  const [name, setname] = useState({ name: "PRAGYA PANDEY", age: 20 })
-
+const App = () => {
   return (
-    <>
-      <AppState.Provider value={{ data, name }}>
-        <Header />
-        <div className='main-coMPO'>
-          <CompoA />
-        </div>
-      </AppState.Provider>
-    </>
-  );
+    <div>App</div>
+  )
 }
 
 export default App
-export { AppState };

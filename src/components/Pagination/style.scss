@@ -1,0 +1,38 @@
+.product-listing {
+    display: flex;
+    flex-wrap: wrap;
+  
+    gap: 24px;
+  
+    .product-container {
+      display: flex;
+      flex-direction: column;
+      background-color: lightBlue;
+      border-radius: 12px;
+      padding: 16px;
+      flex: 1 1;
+    }
+  }
+  
+  .pagination-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin: 16px 0;
+  
+    span {
+      display: flex;
+      flex: 1 1;
+      width: 24px;
+      height: 24px;
+      background: lightGrey;
+      text-align: center;
+      justify-content: center;
+      align-items: center;
+  
+      &.active {
+        background: lightBlue;
+      }
+    }
+  }
+  

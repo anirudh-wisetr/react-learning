@@ -43,3 +43,39 @@
   padding-top: 4px;
   margin-left: 50px;
 }
+
+.breadcrumb-wrapper {
+  display: flex;
+  gap: 6px;
+}
+
+.grid-wrapper {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  border: 1px solid gainsboro;
+  width: min-content;
+  padding: 25px;
+}
+
+.grid-container {
+  border: 1px solid gainsboro;
+  height: 120px;
+  width: 120px;
+
+  &:nth-child(5){
+     visibility: hidden;
+  }
+
+  &.grid-selected {
+    background: green;
+  }
+}
+
+.grid {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}

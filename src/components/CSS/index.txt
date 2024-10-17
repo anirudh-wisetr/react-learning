@@ -1,0 +1,1749 @@
+VIDEO1. WHY CSS ? 
+     A. TO STYLE HTML TAGS and Content
+     B. TO MAKE WEBSITE RESPONSIVE
+     C. TO ADD ANIMATION ON WEBSITE
+     D. TO ADD 2D AND 3D TRANSFORMATION ON WEBSITE
+
+
+VIDEO2. There are three ways to insert CSS in HTML documents.
+    A. INLINE CSS 
+          Inline CSS is used to apply CSS on a single element.
+
+          For example:
+          <p style="color:blue">Hello CSS</p> 
+
+    B. Internal CSS
+          Internal CSS is used to apply CSS on a single document or page. 
+          It is written inside the style tag within head section of html. 
+
+          For example:
+          <!DOCTYPE html>  
+          <html>  
+          <head>  
+          <style>  
+            h1 {  
+                color: red;  
+                margin-left: 80px;  
+            }   
+            </style>  
+            </head>  
+            <body>  
+            <h1>The internal style sheet is applied on this heading.</h1>  
+            <p>This paragraph will not be affected.</p>  
+            </body>  
+            </html>  
+
+    C. External CSS
+         External CSS is used to apply CSS on multiple pages or all pages. 
+         You need to link style.css file to your html file like this =====> 
+          <link rel="stylesheet" type="text/css" href="style.css">  
+         The link tag must be used inside head section of html.
+
+VIDEO4. CSS Selector
+        CSS selectors are used to select the content you want to style.
+        CSS selectors select HTML elements according to its id, class, type, attribute etc.
+
+        Different types of Selectors : 
+        1. CSS Element Selector (selects the HTML element by tab name) 
+           For eg.  
+             p{  
+              text-align: center;  
+              color: blue;  
+              }   
+
+        2. CSS Id Selector (are used to select the element having id attribute , we cann't use same id multiple times)
+           For eg.
+           #para1 {  
+            text-align: center;  
+            color: blue;  
+            }  
+
+        3. CSS Class Selector (are used to select the element having class attribute , we can use same class multiple times)
+           For eg.(1)   =====>        .para1 {  
+                                          text-align: center;  
+                                          color: blue;  
+                                       }  
+           
+           For eg.(2)   =====>        p.center {  
+                                         text-align: center;  
+                                         color: blue;  
+                                       }  
+
+        4. CSS Universal Selector ( used to selects all the elements you want to style.)
+           For eg.
+           * {  
+            color: green;  
+            font-size: 20px;  
+            }   
+
+NOTE: DIFFERENCE BETWEEN ID AND CLASS ========> ID Selector can use only one time whereas CLASS Selector can use multiple time
+
+
+VIDEO6. CSS OUTLINE 
+         Outline is a line outside of the element's border.
+         It is just like CSS border property .
+
+        outline-offset=======> The outline-offset property adds space between an outline and the border (outline-offset: 15px;)
+
+DIFFERENCE BETWEEN BORDER AND OUTLINE (MAIN DIFFERENCE VAISE TO A POINT HI HEI )
+A) Outlines do not take up space. But Boder take space  (REFER TO VIDEO 12 NOTES . WHAT I'M TRYING TO SAY)
+
+B) Rounded corners
+We can use border-radius property with border. But not with outline.
+
+C) Styling one side only
+We can use border-top:, border-left: etc. with border . But not with outline.
+
+FOR EXAMPLE =========> https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_outline-offset 
+
+VIDEO6. CSS PADDING (It is used to add space between the element content and the element border ) (padding: 2px)
+
+VIDEO7. CSS MARGIN (It is used to add space outside the element's border ) (margin: 2px)
+
+VIDEO12. CSS box-sizing Property  
+             By default, the width and height of an element is calculated with : 
+                  width and Height + padding + border = actual width of an element
+            Without box-sizing border-box Property ,the element may appears bigger because LET'S take an example if an element have height and width of 20px and then we add 2px of border then the total height and width of an element will become 24px because Without box-sizing border-box Property ,border and padding are added to the total element's width and height BUT With the CSS box-sizing border-box Property ====> padding & border includes in an SPECIFIED element's width and height.
+            FOR EG. ====> box-sizing: border-box;
+
+WATCH THIS VIDEO TOO =========> https://www.youtube.com/watch?v=_0xs16gjsF4  
+
+VIDEO13. CSS overflow 
+             CSS overflow is when the content overflows from its specified container. 
+             TYPES=====> hidden - overflow content will be invisible.
+                         scroll - a scrollbar is added to see the overflow content
+                         auto - Similar to scroll, but it adds scrollbars only when necessary
+                         visible - Default. 
+            Property====> overflow-x (overflow work only on x-axis) and overflow-y (overflow work only on y-axis)  
+
+VIDEO14. CSS Border Radius (used to to add rounded corners to elements)
+NOTE ====> To make circle with border-radius , height and width should be same and then add border-radius : 50% 
+                            For eg. ======> .ani{
+                                     height:40px
+                                     width:40px
+                                     border-radius:50%
+                                         }
+
+
+VIDEO15.(WATCH VIDEO 22 FIRST THEN WATCH THIS) CSS Box-shadow (used to add shadow-like effects AROUND THE ELEMENT)
+                        (box-shadow: h-offset v-offset blur spread color inset;)
+               where as: h-offset(horizontal offset / x-axis offset / add shadow on left and right )
+                         v-offset(vertical offset / y-axis offset / add shadow on top and bottom )
+                         blur (used to blur the box-shadow) (optional Value)
+                         spread (used to sets the shadow size)
+                         color (used to set the color of the shadow) (optional Value)
+                         inset (REFER NOTE POINT (3)) (optional value)
+NOTE:(1) By default,Shadow appears on right section of element but you can change it to left section by providing negative(-) value on h-offset v-offset
+(2) You can add multiple shadows too by separting comma(,) . For eg. box-shadow : 6px 6px 3px red , 12px 12px 3px green , ........... ;
+(3) By default, shadow appears outside the box but by using inset, the shadow can be created within the box.
+
+NOTE (INTERVIEW) ===> QUES ==> ALTERNATIVES OF BORDER ? AND WHAT ARE THE BENEFITS OF THOSE OVER BORDER ? 
+ANSWER) A) WE CAN USE OUTLINE AND BOX SHADOW AS ALTERNATIVE OF BORDER 
+        B) BENEFITS ===> BORDER TAKE SPACE TO DIV . FOR EXAMPLE , IF WE SET HEIGHT OF DIV IS 100PX AND THEN WE ADD 
+                         BORDER OF 10PX SOLID RED . THEN HEIGHT OF DIV WILL BECOME 100PX+10PX+10PX=120PX BUT 
+                         OUTLINE AND BOX SHADOW DOES NOT TAKE SPACE.
+
+BORDER: 1PX SOLID RED  , BOX-SHADOW: 0 0 0 1PX RED  (BOTH ARE SAME)
+OBVIOUSLY WE CAN'T MAKE DASH BORDER , ONLY SOLID VISIBLE . BECAUSE SHADOW CANN'T BE DASHED.
+
+NOTE (INTERVIEW) ===> QUES ==> Checkbox par border property nhi lagti to border lagane ke liye use box-shadow
+input(type="checkbox"){
+BOX-SHADOW: 0 0 0 1PX RED;
+}
+
+VIDEO16. CSS FLOAT (used to shift an element on the left or right side of its container)
+TYPES====> (1) float:left (used to float the element to the left) and (2) float:right(used to float the element to the right.)
+
+VIDEO17. CSS CLEAR
+EXPLAINATION===> Generally , when we we use float the element to left or right . 
+So , it creates an empty space. So to clear the space , we use clear property.
+
+POSSIBLE VALUES
+1. clear: none; ===> Element remains adjacent to floated elements (By Default Value)
+2. clear: left; ===> Element pushed below left floated elements
+2. clear: right;===> Element pushed below right floated elements
+2. clear: both; ===> Element pushed below all floated elements
+
+WATCH THIS CSS FLOAT AND CLEAR =====> https://www.youtube.com/watch?v=queQlNTSARc 
+
+VIDEO18: CSS FONT 
+1) DIFFERENCE BETWEEN px, % and em 
+px is absolute value means fixed value . It doesn't depend on other value Or we can say It's fixed on every screen means 10px is 10 pixels.  where as 
+em and % are relative values means it depends on parent value means 
+* if 2em is used on an element where the parent uses 10px, the result will be 20px.
+* if parent element uses 10px , and we use 20% then the result will be 20% of 10px.
+
+Note : diff. b/w em and % (em units is always relative to font-size where as Percents depends on context( if they're used in font-size, they will be relative to the current font-size; if it's in height, they will be relative to the height.)
+
+EXAMPLE =====> https://www.w3schools.com/cssref/tryit.php?filename=trycss_unit_em (V.V.V.V.V.V.V.V.V.V.V.V.V IMPORTANT )
+
+
+2) Font Weight
+font-weight: 100/200/300/400/...900 (Numerical Value)
+font-Weight: normal  ( Normal font weight. Same as 400.)
+font-Weight: bold    ( Bold font weight. Same as 700.)
+font-Weight: bolder  ( font weight heavier than the parent element)
+font-Weight: lighter ( font weight lighter than the parent element)
+
+3) Font Variant (only two values===> normal and small-caps ) (font-variant: small-caps;) ( NOT IMPORTANT PROPERTY )
+In a small-caps font, all lowercase letters are converted to uppercase letters. 
+And that converted uppercase letters appears in a smaller font size than the original uppercase letters in the text.
+You can check here on example ====> https://www.w3schools.com/cssref/tryit.asp?filename=trycss_font-variant
+
+VIDEO19. CSS TEXT
+1) text-align (used to set the horizontal alignment of a text) 
+Used to set only on BLOCK ELEMENTS.Not on INLINE ELEMENTS ( watch VIDEO40 to understand this) 
+(V.V.IMPORTANT,WATCH https://www.youtube.com/watch?v=rtFffkOtzTo)
+Possible values =====> 
+left: It is used to align the text to the left.
+right: It is used to align the text to the right.
+center: It is used to align the text to the center.
+justify: (It is used to align the text equal from both side i.e Left or Right means each line has equal width)
+
+2) text-align-last (used to align the last line of a text) (same as above but this property is used to do on last line only)
+Possible values =====> (same as point 1 but some additional values too which are =====> )
+V.V.V.V.V.V.V.V.V.V.V.V.V.IMPORTANT BELOW EXAMPLE
+FOR EXAMPLE ======> https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_text-align-last
+
+3) text-transform (used to convert text to uppercase, lowercase & make text capitalize)
+Possible values =====> 
+capitalize (Transforms the first letter of each word to uppercase)
+uppercase (Transforms all letter to uppercase)
+lowercase (Transforms all letter to lowercase)
+
+4) text-indent (used to add the length of empty space before the beginning of the first line of the text)
+For eg. text-indent: 100px;
+FOR EXAMPLE ========>  https://www.w3schools.com/cssref/tryit.asp?filename=trycss_text-indent 
+
+5) word-spacing (used to increases or decreases the white space between words. Note: Negative values are allowed. )
+FOR EXAMPLE ========> https://www.w3schools.com/cssref/playdemo.asp?filename=playcss_word-spacing 
+
+6) letter-spacing (used to increases or decreases the space between letters in a text.)
+FOR EXAMPLE ======> https://www.w3schools.com/cssref/tryit.asp?filename=trycss_letter-spacing 
+
+VIDEO20. CSS TEXT Decoration (used to add an underline, overline, line-through, or a combination of lines to selected text.)
+A) text-decoration-line 
+   Possible Value ====> text-decoration-line: underline    ( a line will be displayed under the text)
+                        text-decoration-line: overline     ( a line will be displayed over the text)
+                        text-decoration-line: line-through ( a line will be displayed through the text) 
+                        text-decoration-line: none         ( to remove line especially in anchor tag) 
+
+B) text-decoration-color property specifies the color of the text-decoration (underlines, overlines, linethroughs).
+FOR eg. text-decoration-color: red;
+
+C) text-decoration-style property sets the style of the text decoration (like solid, wavy, dotted, dashed, double).
+FOR eg.  text-decoration-style: wavy;
+
+SHORT HAND PROPERTY =====> text-decoration : text-decoration-line text-decoration-color text-decoration-style
+FOR eg.  text-decoration: underline red dashed;
+
+
+VIDEO21. Word Break
+(It wraps the long words into the next line to prevent overflow when word is too long to fit in the container)
+
+Possible Values :
+break-word : used to WRAP THE WORD into the next line to prevent overflow.But in this case , length of empty space may appear.
+break-all  : used to break the long words at the end of a line to prevent overflow. And , in this case , it prevents white space
+keep-all   : ByDefault Value
+
+DIFFERENCE BETWEEN break-word & break-all ====> 
+When we use break-word, white space includes in a line because it WRAP THE WORD into the next line but 
+When we use break-all, it prevent white space because break the long words at the end of a line to prevent overflow.
+
+VIDEO22. CSS Text Shadow (used to add shadow like effect to TEXT)
+SYNTAX text-shadow: h-shadow v-shadow blur color|none|initial|inherit;0
+h-shadow	      ( Required. The position of the horizontal shadow. Negative values are allowed )
+v-shadow	      ( Required. The position of the vertical shadow. Negative values are allowed )
+blur-radius  	(Optional. The blur radius. Default value is 0 )
+color	         (Optional. The color of the shadow.)
+none	         (Default value. No shadow.)
+
+NOTE:(1) By default,Shadow appears on right section of element but you can change it to left section by providing negative(-) value on h-shadow v-shadow
+(2) You can add multiple shadows too by separting comma(,) . For eg. text-shadow : 6px 6px 3px red , 12px 12px 3px green , ........... ;
+You can search on net for multiple shadow example , you will find very good examples there to add into your website.
+
+
+VIDEO23. CSS White Space (used to handle the white spaces inside an element)
+Possible VALUES 
+1) nowrap ( Text will never wrap to the next line and only break when <br> tag is used.)
+2) pre (it is act like html <pre> tag) (<pre> tag==> text will be displayed exactly as written in the HTML source code)
+without <br> tag bhi , line neeche aara hei kyuki <pre> tag ki vjah se
+<div>Lorem epsum     text value.</div>
+<div>Lorem epsum text value.</div>
+<div>Lorem epsum text value.</div>
+
+OUTPUT ====>
+Lorem epsum     text value.
+Lorem epsum text value.
+Lorem epsum text value.
+
+3) pre-wrap (Similar to pre ) , but the text also wraps when needed.)
+NOTE: WATCH THIS TOPIC VIDEO FROM HERE ===>  ( https://youtu.be/20xwOxFlGGQ )
+
+VIDEO24. CSS Text-Overflow (It specifies how to represent overflowed text, which is not visible to the user)
+NOTE ====> Both of the following properties are mostly used for the use of text-overflow:
+             white-space: nowrap; 
+             overflow: hidden;    (Without this property,CSS Text-Overflow  won't work)
+POSSIBLE Values
+1) ellipsis	======> Ellipsis ("...") is used to represent the overflowed text, which is not visible to the user.
+1) string	======> given string is used to represent the overflowed text, which is not visible to the user.
+
+
+VIDEO25. CSS writing-mode ( changes the alignment of the text so that it can be read from vertically(top to bottom) or from horizontally(left to right)
+POSSIBLE Values
+1) writing-mode: horizontal-tb; (DEFAULT) means text will be display horizontally ( left to right ) & vertically (top to bottom)
+2) writing-mode: vertical-lr;             means text will be display vertically (top to bottom) & horizontally ( left to right )
+3) writing-mode: vertical-rl;             means text will be display vertically (top to bottom) & horizontally ( right to left )
+
+SEE EXAMPLE ===> https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_writing-mode
+
+
+VIDEO26. CSS Column 
+POSSIBLE VALUES
+1. column-count
+column-count: 4; ( MEANS CONTENT WILL BE DIVIDED INTO 4 COLUMNS)
+(You may thinking we can use CSS FLEX to divide the content but in flex you have to add more than one child component in parent cmp. 
+ but here it can divide into column within one container )
+ SYNTAX ==> column-count:3;
+
+2. column-gap:250px (It speciefies the gap between the columns)
+
+3. column-rule ( used to add line between columns )
+This property is a shorthand property for:
+column-rule-width
+column-rule-style (required)
+column-rule-color
+
+SYNTAX =====> column-rule: 4px solid #ff00ff;
+
+4. column-width ( used to column width ) (used to set the minimum width for columns ) (automatically divide the content into minimum no. of columns)
+NOTE: HERE , WE DON'T NEED TO USE column-count .
+column-count: 200px; ( MEANS CONTENT WILL BE DIVIDED INTO THE WIDTH OF 200PX)
+SYNTAX column-width: 250px;
+
+VIDEO27 IGNORE
+
+VIDEO29. CSS LIST (used to style HTML LIST BY SOME BELOW PROPERTY)
+A) list-style-type: specifies the appearance of the list item marker (such as a disc, character, or custom counter style) 
+MAIN POSSIBLE VALUES FOR UNORDER LISTE====>   1) list-style-type: circle; 
+                                              2) list-style-type: disc; (by default)
+                                              3) list-style-type: square;
+                                              4) list-style-type: none; (	No marker is shown)
+
+MAIN POSSIBLE VALUES FOR ORDER LISTE====>     1) list-style-type: upper-alpha;  (A. , B. ,...........)
+                                              2) list-style-type: lower-alpha;  (a. , b. ,...........)
+                                              3) list-style-type: upper-roman;  (|. , ||. , |||. , ...........)
+                                              4) list-style-type: lower-roman;  (i. , ii. , iii. , ...........)
+                                              5) list-style-type: none; (	No marker is shown)
+                                              6) list-style-type: decimal; (	By Default) (1. , 2. , .........)
+
+B) list-style-position : specifies the position of the list-item markers (bullet points).
+POSSIBLE VALUES
+list-style-position: outside;  means that the list-item markers will be outside from the list item.
+list-style-position: inside;   means that the list-item markers will be inside from the list item.
+
+C) list-style-image : replaces the list-item marker with an image.
+SYNTAX ==> list-style-image: url(LINK);
+
+NOTE : YOU CAN TAKE ICONS , IMAGE FROM WEBSITE (https://www.iconfinder.com/) FOR FREE
+
+VIDEO30. CSS BACKGROUND IMAGE
+A) background-image ( used to set one or more background images for an element )
+SYNTAX ====>  background-image: url(IMAGE PATH)
+background-image: url(IMAGE PATH), url(IMAGE PATH);
+
+B) background-repeat ( speciefies how background images should be repeated ) 
+SYNTAX====> background-repeat: repeat|repeat-x|repeat-y|no-repeat|space;
+POSSIBLE VALUES 
+1) repeat     ====>  By default VALUE ( a background-image is repeated both vertically and horizontally )
+2) repeat-x   ====>  The background image is repeated only horizontally
+3) repeat-y   ====>  The background image is repeated only vertically
+4) no-repeat  ====>  The background-image is not repeated. The image will only be shown once
+4) space      ====>  whitespace is distributed between the repeated images
+
+C) background-position ( speciefies the position of a background image )
+POSSIBLE VALUES  (FIrst value represent x-axis and second value represent y-axis)
+#) left top   (x-axis (left) and y-axis (top) )
+#) left center 
+#) left bottom 
+#) right top , right center , right bottom , center top , center center, center bottom 
+#) 20% 30% , 200px 400px
+
+D) background-attachment ( it speciefies either a background image scrolls with the rest of the page, or is fixed ) 
+SYNTAX: background-attachment: scroll|fixed ;
+1) scroll : The background image scrolls with the rest of the page ( BY DEFAULT VALUE )
+2) fixed : The background image will not scrolls with the rest of the page 
+
+E) background-size ( specifies the size of the background images )
+SYNTAX==> background-size: auto|length|cover|contain ;
+POSSIBLE VALUES 
+1) auto	  ====> Default value. The background image is displayed in its original size
+2) length  ====> Sets the width and height of the background image. The first value sets the width, the second value sets the height. FOR ex. background-size: 20px;
+3) % ==>	Sets the width and height of the background image in percent of the parent element. The first value sets the width, the second value sets the height. FOR ex. background-size: 30%;
+4) cover	====> It is used to cover the entire container with background image.
+5) contain ==> It streches the background image to make sure the image is fully visible
+
+F) background-origin (it speciefies how Image background is positioned relative to borders, padding, and content.)
+NOTE : This property has no effect if background-attachment is "fixed". ( V.V.V..V.V.V..V.V.V.V.V..V.........V.V.V.IMPORTANT NOTE)
+SYNTAX====> background-origin: padding-box|border-box|content-box;
+POSSIBLE VALUES
+1) padding-box (Image shows where padding starts) (DEFAULT VALUE)
+2) border-box  (Image shows where border starts)
+3) content-box (Image shows where content starts)
+
+VIDEO34. CSS BACKGROUND CLIP (how background color is positioned relative to borders, padding, and content.)
+SIMILAR TO ABOVE PROPERTY BUT ABOVE WORKS WITH IMAGE AND THIS ONE WORKS WITH BACKGROUND COLOR
+SYNTAX====> background-clip: padding-box|border-box|content-box;
+POSSIBLE VALUES
+1) padding-box (Background shows where padding starts)
+2) border-box  (Background shows where border starts) (DEFAULT VALUE)
+3) content-box (Background shows where content starts)
+
+VIDEO35. IGNORE BECAUSE COMPANY WILL PROVIDE THE EXACT COLOR 
+
+VIDEO36. CSS GRADIENT (CHECK FROM HERE COMPLETELY ===> https://www.w3schools.com/css/css3_gradients.asp ) 
+ESPECIALLY THAT RAINBOW PART THAT CAN BE INTERVIEWED . 
+
+* It is used to add more than two background colors in an element   ======>  (ANIANIANI)
+* Types ======> 
+     linear-gradient()	             =========>  It goes from one direction to another direction. 
+                                                 By default it goes (top to bottom)
+     radial-gradient()	             =========>  A radial gradient is defined by its center.
+                                                 By default, shape is ellipse,and position is center.
+     conic-gradient()	               =========>  A conic gradient is rotated around a center point.
+     repeating-conic-gradient()	     =========>  Repeats a conic gradient
+     repeating-linear-gradient()	   =========>  Repeats a linear gradient
+     repeating-radial-gradient()	   =========>  Repeats a radial gradient
+
+VIDEO37. CSS Opacity ( used to increase or decrease the transparency of an element ) 
+The opacity property can take a value from 0.0 - 1 (Here 1 is bydefault means no transparency is added) 
+The lower the value, the more transparent:
+iF Opacity SET TO 0 , NOTHING WILL SHOW 
+The opacity property is often used together with the :hover selector to change the opacity on mouse-over:
+
+NOTE : If you use opacity property , then it works on whole container but if you want to use only on color / background color 
+then you can use by rgba(76, 175, 80, 0.3) where last property represent the opacity value . 
+So rgba used much as compared to normal opacity property.
+
+VIDEO40. CSS DISPLAY (VERY VERY VERY VERY VERY IMPORTANT TOPIC)
+It speciefies how an element should be displayed. 
+Every HTML element has a default display value depending on what type of element it is. The default display value for most elements is block or inline.
+
+SOME IMPORTANT CSS DISPLAY PROPERTIES 
+
+A) Block-level Elements (display:block)
+Block-level element
+* It take full-width (100% width) by default
+* It always starts on a new line
+* Width & height properties can be set
+* It can contain other block or inline elements
+
+Examples of block-level elements:
+<div>
+<h1> - <h6>
+<p>
+<form>
+<header>
+<footer>
+<section>
+
+B) Inline Elements (display:inline) (basically text tags)
+Inline Elements
+* It take space as much as they need
+* Display side by side
+* Width or height ,top-bottom margin/padding can't be set
+* It can contain other inline elements
+
+Examples of inline elements:
+<span>
+<a>
+<img>
+
+C) CSS display none (display:none)
+It removes the element from the document. It does not take up any space.
+
+D) CSS display inline-block ( display: inline-block )
+Inline-block elements are similar to inline elements, except Width, height ,top-bottom margin/padding can be set.
+
+Compared to display: inline ===> 
+display: inline-block allows to set Width, height ,top-bottom margin/padding
+
+Compared to display: block  ===> 
+display: inline-block does not always starts on a new line.
+
+NOTE: WHEN YOU WANT TO GIVE WIDTH, HEIGHT, PADDING , MARGING PROPERLY AND DOES NOT WANT TO ADD A LINE-BREAK AFTER THE ELEMENT . USE THIS PROPERTY .
+MEANS display: inline(ek line mei bhi rahenge) - block( width, top/bottom margin/padding bhi set ho jyga) 
+
+F) CSS display list-item ( display: list-item )
+In display list-item , element behaves like a list <li> element and can use list properties like list-style-type, list-style-image,list-style-position. (YOU CAN CHECK VIDEO29 to understand more)
+
+VIDEO41. DIFFERENCE BETWEEN DISPLAY NONE AND VISIBILITY HIDDEN
+With visibility:hidden, it hides the element, but it still takes the space in the layout. BUT 
+With display:none, it removes the element from the document. It does not take up any space.
+
+VIDEO43. CSS position property (WATCH THIS TOPIC FROM THAPA TECHNICAL TOO AFTER THIS VIDEO)
+It speciefies the position of an element IN A DOCUMENT. 
+To use CSS position property, we have to use helper property like left, right, top, bottom and z-index properties to determine the final position of an element IN A DOCUMENT.
+Means Without left, right, top, bottom and z-index properties , CSS position property does not work
+
+POSSIBLE VALUES 
+1. STATIC
+This is the default value for elements. The element is positioned according to the normal flow of the document. 
+There is no affect on left, right, top, bottom and z-index properties on static element.
+
+2. Relative 
+The element is positioned relative to its normal position,
+But, unlike static elements, we can use helper properties like left, right, top, bottom and z-index properties on Relative element.
+
+3. Absolute
+The element is positioned relative to its nearest NON STATIC PARENT. 
+If an absolute positioned element has no nearest NON STATIC PARENT then it uses the document body AND  it does not depend upon its siblings.
+After adding position:absolute , z-index added to that particular element (MEANS IT WILL BE PLACED ON TOP OF THE OTHER ELEMENT)
+
+4. Fixed 
+Fixed elements always stays in the same place even if the page is scrolled.
+
+5. Sticky
+The element is positioned according to the normal flow of the document BUT
+after certain point we define, it becomes fixed
+
+VVVVVV.IMP IN INTERVIEW ===> DIFFERENCE BETWEEN FIXED AND STICKY (SEE DIFFERENCE FROM HERE ====> https://codepen.io/kevinpowell/pen/eXwdwq )
+Fixed elements always stays in the same place even if the page is scrolled. WHERE AS , In STICKY , The element is positioned according to the normal flow of the document BUT after certain point , it becomes fixed
+
+NOTE: SO left, right, top, bottom and z-index properties work with every Possible values except position:static which is bydefault value. 
+
+VIDEO44. CSS Z-INDEX 
+Without CSS position property , we can't use Z-index 
+Elements with a higher index will be placed on top of elements with a lower index.
+By default z-index value is 0 . 
+For ex. If ELEMENT A HAS Z-INDEX VALUE OF 2 AND ELEMENT B HAS Z-INDEX VALUE OF 3 . So in that case , 
+ELEMENT B will be placed on top of ELEMENT A . 
+
+VIDEO45. CSS Media Queries
+It is used to make application responsive across all screen sizes. For eg. desktop , mobile, tabs e.t.c
+
+Common breakpoints for widths of devices: (You can directly search on google too for common breakpoints)
+320px — 480px: Mobile devices
+481px — 768px: iPads, Tablets
+769px — 1024px: Small screens, laptops
+1025px — 1200px: Desktops, large screens
+1201px and more —  Extra large screens, TV
+
+FOR EXAMPLE ===> xyzpx width ke andar andar body ke background-color : lightblue ho jyga
+@media only screen and (max-width: xyzpx) {
+  body {
+    background-color: lightblue;
+  }
+}
+
+VIDEO46. CSS Table 
+POSSIBLE VALUES
+1) border-spacing (The border-spacing property sets the distance between the borders of adjacent cells.)
+FOR EG. border-spacing : 10px 20px;  (spacing from 10px from vertical and 20px from horizontal)
+
+2) border-collapse (used to set the border of the table cells and specifies whether the table cells share the separate or common border)
+TWO POSSIBLE VALUES
+A) separate (bydefault)
+B) collapse (used to collapse the borders into a single border. When this value is applied, the border-spacing property does not affect.)
+
+3) vertical-align (sets the vertical alignment of an element. ) (top,middle,bottom,.....)
+
+4) WE CAN ADD PADDING TO TABLE CELL TOO ( OBVIOUS ) 
+FOR EG. td,th{
+ padding:20px 30px;
+}
+
+5) table-layout ( used to display the layout of the table. )
+TWO POSSIBLE VALUES
+A) auto (bydefault)
+B) fixed (used to set a fixed table layout.)
+
+6) To hover particular row in a table , use tr:hover{background-color:red}
+
+7) To differentiate color of odd and even rows , use tr:nth-child(even){background-color:red}
+
+VIDEO47. CSS Resize (used to Resize an element ( either horizontally , vertically or in both directions ) ) 
+SYNTAX resize: none | horizontal | vertical | both;
+A) none: It is the default value of this property, which does not allow user to resize an element.
+B) horizontal: allows the user to resize the element's in horizontal direction. 
+C) vertical:   allows the user to resize the element's in vertical direction. 
+D) both: It allows the user to resize the element's in both horizontal and vertical directions.
+
+VERY IMPORTANT NOTE : 
+A) TO USE CSS RESIZE , YOU HAVE TO USE overflow:auto; . OTHERWISE IT WILL NOT WORK.
+B) IN TEXTAREA , BYDEFAULT WE CAN RESIZE BECAUSE BYDEFAULT TEXTAREA HAS overflow:auto; AND CSS RESIZE PROPERTY . 
+   SO IF YOU DON'T WANT TO RESIZE TEXTAREA , YOU CAN STOP BY ADDING ===> resize:none; 
+  BUT OVERFLOW WORK IN TEXTAREA BECAUSE BYDEFAULT TEXTAREA HAS OVERFLOW PROPERTY TOO. 
+
+VIDEO48. CSS Cursor (specify how mouse cursor will look like when it is placed over the element in which this property is set. ) 
+
+NOTE: THERE ARE MULTIPLE POSSIBLE VALUES WHICH YOU CAN CHECK FROM HERE ( https://www.w3schools.com/cssref/tryit.asp?filename=trycss_cursor )
+BUT , MOSTLY 99% WE USE cursor:pointer; (here pointer makes hand icon)
+
+
+VIDEO49. CSS UNITS (CSS has several different units for expressing a length.)
+There are two types of length units: absolute and relative.
+A) ABSOLUTE (length units are fixed and are of same size always)
+There are so many absolute values like px, centimeter, milimeter e.t.c but most of the developers use =====> px  (PIXEL)
+
+B) RELATIVE (Relative length units are relative to something else, perhaps the size of the parent element's)
+It is used to make website responsive because they scale relative to the window size or the parent.
+Most useful units are:
+1) em & % : em unit is based on the parent size means if 2em is used on an element where the parent uses 10px, the result will be 20px. (same for %)
+
+Note : diff. b/w em and % (em units is always relative to font-size where as Percents depends on context. 
+For example, if they're used in font-size, they will be relative to the current font-size; if it's in height, they will be relative to the height.)
+
+2) rem : Font size of the root element. (does not depened upon it's parent font size , only root parent's font size)
+Here Root element means html tag ==> html{font-size:20px} . NOT DEPEND ON BODY 
+
+3) vh: (VIEW HEIGHT) (It is relative to the height of the viewport) 
+
+4) vw: (VIEW WIDTH) (It is relative to the width of the viewport) 
+
+5) vmax: 
+
+6) vmin: 
+
+NOTE FOR POINT 3 & 4 ==> 
+1) VIEWPORT means user's visible area of a web page (Browser window size)
+2) 1vh/1vw = 1% of the height/width of the viewport. For eg. (100vh means 100% of the height of the viewport )
+3) MOST IMPORTANT ==> It doesn't depend on parent unit. ONLY ALWAYS VISIBLE AREA OF SCREEN. 
+
+VIDEO50. CSS var()
+Instead of using same value again n again . We can create variable and then can use wherever we want. 
+var() function is used to insert the value of the variables.  
+To create a variable with global scope, we have to declare it inside the :root selector. 
+:root {
+  --main-color: red;
+  --white: #ffffff;
+}                              NOTE: -- is required as a prefix to define variables.
+FOR EG. 
+body { background-color: var(--main-color); } ;
+h2 { border-bottom: 2px solid var(--main-color); }
+
+Advantages of using var() are:
+1) Code readibility increases
+2) Instead of using same value again n again . We can create variable and then can use wherever we want.
+FOR EG. If you change the color of main-color (suppose blue) , then automatically wherever we used main-color , it will change from red to blue.
+
+VIDEO51. CSS calc() ( is used to perform a calculation part in css property value )
+FOR EXAMPLE: 
+1) .box{
+      border:1px solid black;
+      background-color: red;
+      padding:20px;
+      width: calc(100% - 20px-20px-1px-1px);
+    }
+So if we do not use calc() or we simply write width:100% . Then, Width become overflow because of padding (20px each) and border width (1px each) . 
+BY THE WAY , WE CAN SOLVE THIS WIDTH PROBLEM BY USING box-sizing (check VIDEO12).
+
+2) QUESTION: 3 container bana (Header, Content, Footer ) Jisme Header and Footer 100px ke honge aur baki bachi height Content par jayegi .
+             Make responsive too 
+   ANSWER: .header{
+             background-color: red;
+             width:100%;
+             height:100px;
+             }
+
+           .footer{
+             background-color: blue;
+             width:100%;
+             height:100px;
+             }
+
+            .content{
+               background-color: yellow;
+               width:100%;
+               height:calc(100% - 200px);  SO HERE IS THE USE OF calc()
+            }
+
+
+VIDEO52. CLIP PATH (WATCH THIS VIDEO FIRST ====> https://www.youtube.com/watch?v=NBS6qyEZjuE  , THEN CHECK OM YAHOO BABA )
+It is used to create design like CIRCLE , ELLIPSIS , INSET ( MEANS RECTANGLE,SQUARE) AND POLYGON ( MEANS WE CAN CREATE ANY DESIGN WITH POLYGON) ON IMAGE ONLY. 
+POSSIBLE VALUES
+NOTE: x-axis and y-axis humesha image ke TOP LEFT se start hota hei (IMPORTANT)
+A) CIRCLE 
+clip-path: circle(50px at 50% 60%);
+Here, 50px means circle radius (means circle kitna bada rahega means circle 50px bada rahega apne centre point se)
+      50% (x-axis se 50% door circle ke centre point)
+      60% (y-axis se 60% door circle ke centre point)
+
+B) ELLIPSIS
+clip-path: ellipse(10px 40px at 50% 60%);
+Here, 10px means horizontal radius (means horizontal se kitna bada rahega means design 10px horizontally bada rahega apne centre point se)
+      40px means vertical radius (means vertical se kitna bada rahega means design 40px vertically bada rahega apne centre point se)
+      50% (x-axis se 50% door circle ke centre point)
+      60% (y-axis se 60% door circle ke centre point)
+
+C) INSET (used to create rectangle design)
+clip-path: inset(100px 50px 100px 50px); 
+Here, 100px from top , 50px from right , 100px from bottom ,50px from right 
+SHORT FORM ====> clip-path: inset(100px 50px); ===> 100px from top bottom , 50px from left right
+
+D) POLYGON (used to create any design you want . especially Triangle)
+I'm taking an example of Triangle here because it can ask in interview too.
+clip-path: polygon(50% 0% , 100% 100% , 0% 100%); 
+Here First point is 50% 0% means , 50% from x-axis and 0% from y-axis
+     Second point is 100% 100% means , 100% from x-axis and 100% from y-axis
+     Third point is 0% 100% means , 0% from x-axis and 100% from y-axis
+SEE NOTE POINT TO UNDERSTAND THIS POINT CAREFULLY. 
+Here, in above example we created triangle using polygon but we used 3 points because triangle has only 3 points but, 
+you can take many points to design any design . 
+CHECK THIS WEBSITE TO CREATE ANY POLYGON DESIGN ( https://bennettfeely.com/clippy/ )
+YOU CAN CHECK THIS PDF TOO FOR BETTER UNDERSTANDING THE POINTS ( https://drive.google.com/drive/folders/1dSJdaEv6axlwh5nb_94Jrdt6RSewFFX3 )
+
+VIDEO53. CSS Shape-Outside 
+ It is used to place text around any shape.
+ ( https://youtu.be/uf3ayuzA6ME ===> WATCH THIS TOO V.V.V.V.V.V.V.V.V.V...V.V.....IMPORTANT . WE CAN USE SHAPE-OUTSIDE WITHOUT CLIP PATH)
+( https://youtu.be/LZMf8BqSVls WATCH THIS VIDEO  ===>   IMPORTANT )
+
+
+FOR EG 1.
+Without CSS Shape-Outside , when we use CSS CLIP PATH , shape is cut out from the whole image .BUT, 
+By using shape-outside we can place text around a shape.
+
+Without float property on image , shape-outside doesn't work .
+To use shape-outside , we have to use same CLIP PATH values
+        clip-path: polygon(50% 0% , 100% 100% , 0% 100%); 
+        shape-outside: polygon(50% 0% , 100% 100% , 0% 100%); 
+        shape-margin: 20px; (shape-margin hum jo text wrap hua hei to vo chipak jaata hei design se , to spacing ke liye hum space-margin use krte hei)
+
+FOR EG 2.  https://youtu.be/uf3ayuzA6ME  ( WRITE COMMENT BELOW DHYAN SE)
+
+VIDEO54. CSS FILTER ( used to add visual effects (like blur and saturation e.t.c) to <img> )
+MOST USED FILTER VALUES: 
+A) blur
+B) brightness (100% : Bydefault , 0% : Full Dark image , ....... ) (Less value , the more image will be dark)
+C) drop-shadow (synatx value same as box-shadow ( see VIDEO 22 ))
+D) gray-scale (used to make black & white) (0% bydefault value , 100% full black & white)
+YOU CAN CHECK VARIOUS FILTER FROM HERE ===>( https://www.w3schools.com/cssref/playdemo.asp?filename=playcss_filter )
+
+VIDEO55. CSS TRANSITION ( used to change the element from one style to another style SMOOTHLY, over a given duration )
+
+TRANSITION MEANS SMOOTHNESS
+
+To create a transition effect, you must specify two things:
+A) the CSS property you want to add an effect to (like on width , height , margin-right , color e.t.c)
+B) the duration of the effect
+Note: If the duration part is not specified, the transition will have no effect, because the default value is 0.
+FOR EXAMPLE : 
+1) div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition: width 2s;
+}
+
+The transition effect will start when the specified CSS property (means here width) value change.
+
+div:hover {
+  width: 300px;
+}
+
+2) div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  color: yellow;
+  transition: width 2s, height 4s;
+}
+
+div:hover {
+  width: 300px;
+  height: 300px;
+}
+
+NOTE: V.V.V.V.V.V.V.V.V.V.USEFUL =====>  transition: all 2s;    (JO BHI CHANGE HORA HOGA LIKE ABOVE MEI HOVER PAR TO ALL LAGATE HI SAB PAR TRANSITION LAG JAYGA AUR 2s TIME BHI SAB PAR LAG JAYGA)
+
+SOME IMPORTANT POINTS AND PROPERTIES : 
+A) transition-property ( It speciefies the CSS property to which a transition effect should be applied.)
+FOR EG.  transition-property: width; 
+
+B) transition-duration ( It specifies how many seconds (s) or milliseconds (ms) a transition effect should take to complete )
+FOR EG. transition-duration: 2s;
+
+C) transition-timing-function (used to change speed during transition effect)
+SOME POSSIBLE VALUES : 
+1) ease	                      Default value. transition effect with a slow start , then fast then end slowly.
+2) linear	                    transition effect with the same speed from start to end
+3) ease-in	                  transition effect with a slow start
+4) ease-out	                  transition effect with a slow end
+5) ease-in-out	              transition effect with a slow start and end
+6) steps(number)              transform effect with number of intervals . FOR eg. steps(4) SO ANIMATION WILL HAPPEN IN 4 STPES.
+7) cubic-bezier(n,n,n,n)      transition effect which you set      ( SAME AS ABOVE , PAR UPAR VALE MEI SMOOTHNESS NHI THI) 
+cubic-bezier(0.1, 0.7, 1.0, 0.1); Possible values are numeric values from 0 to 1 . (jitni kam utna hi tez aur jitni zyda utna hi dheere)
+NOTE: cubic-bezier(n,n,n,n) MEI HUMESHA 4 VALUES ZAROOR HONGI.
+
+D) transition-delay ( IT specify how long the transition effect should wait until it starts. )
+FOR EG.  transition-delay: 1s; MEANS AFTER 1 SECOND , TRANSITION PROPERTY WILL WORK 
+
+NOTE:
+A) We can use shorthand property for above all A,B,C & D Points:
+transition: width 2s linear 1s;
+
+B) Transition + Transformation (WE CAN ADD TRANSITION AND TRANSFORMATION DELAY TOGETHER)
+FOR EG.  transition: width 2s, height 2s, transform 2s;
+
+C) Jaise upar humne dekha Hover par transition lagaya , aise hi hum aur bhi jgah use kar skte hei like some examples : 
+1) active
+
+2) input:focus 
+FOR EG. input{
+   width:40px;
+   transition: width 20s;
+}
+input:focus{
+  width90px;
+}
+
+3) media query
+.box{
+  width:150px;
+  height:150px;
+  transition: all 1s linear;
+}
+@media only screen and (max-width:960px){
+  width:300px;
+  height:300px;
+}
+
+SOME MORE EXAMPLE : 
+A)  div {
+  width: 100px;
+  height: 100px;
+  background: red;
+  transition-property:width,height,background;
+  transition-duration: 2s,2s,2s;           OR  transition: width,height,background 2s,2s,2s;  OR  transition: all 2s; (all means sab par lag jygi)
+}
+
+div:hover {
+  width: 300px;
+  height: 300px;
+  background:orange;
+}
+
+VIDEO56. CSS 2D Transforms (modify an element by its shape, size and position. It lets you rotate, scale, skew, or translate an element)
+POSSIBLE VALUES
+A) rotate() 
+(rotates an element clockwise or anti-clockwise according to a given degree.) (Using negative values will rotate the element anti-clockwise.)
+ transform: rotate(20deg);
+
+B) translate()
+(moves an element from its current position (according to the parameters given for the X-axis and the Y-axis)) 
+transform: translate(50px, 100px);
+         OR
+transform: translateX(50px);
+transform: translateY(100px);
+
+C) scale()
+The scale() method increases or decreases the size of an element (according to the parameters given for the width and height).
+FOR EG. transform: scale(2, 3); (DIV will increase two times of its original width, and three times of its original height)
+        transform: scale(0.5,0.5); (DIV will half of its original width and height)
+        OR
+transform: scaleX(2);
+transform: scaleY(3);
+
+D) skew()
+it TILT an element along the X and Y-axis by the given angles.
+transform: skew(20deg, 10deg);
+       OR
+transform: skewX(20deg);
+transform: skewY(10deg);
+
+E) transform origin 
+The transform origin is the point around which a transformation is applied. 
+To use transform origin property , you have to use other transform property.
+For example, By default , the transform origin of the rotate() function is the center . But , we can change the origin by transform origin
+eg. transform: rotate(30deg);
+    transform-origin: left top;
+
+WHERE DO WE USE TRANSFORM ? SOME EXAMPLES BELOW :
+A) .box{
+    width:200px;
+    height:150px;
+    transform:scale(1);
+    transition:transform 1s;
+    transition-origin:left top; (transition-origin islye lagaya kyuki bydefault origin center ko lera tha to vo shi se chal nhi raha tha)
+  }
+
+  .box:hover{
+    transform:scale(2);
+  }
+
+B) .box{
+    width:200px;
+    height:150px;
+    transform:translate(0,0);
+    transition:transform 1s;
+    transition-origin:left top;
+  }
+
+  .box:hover{
+    transform:translate(50px,50px);
+  }
+
+C) .box{
+    width:200px;
+    height:150px;
+    transform:rotate(0deg);
+    transition:transform 1s;
+  }
+
+  .box:hover{
+    transform:rotate(360deg);
+  }
+
+D) YOU CAN ADD MORE THAN ONE TRANSFORM PROPERTIESS TOO WHICH MAKES IT VERY GOOD ANIMATION
+ .box{
+    width:200px;
+    height:150px;
+    transform:rotate(0deg) scale(1);
+    transition:transform 1s;
+  }
+
+  .box:hover{
+    transform:rotate(30deg) scale(2);
+  }
+
+VIDEO57 and Video58. LEARN BY USING PRACTICALLY . FIRST LEARN HOW TO DO AND THEN YOU CAN SEARCH like css 3d tranform examples / CSS Perspective examples
+NOTE: 
+A) basically without Perspective , 3d animation works but it's not visible to us . So to see visible clearly we use Perspective property .
+Less Perspective value , the 3d anumation will look bigger , More Perspective value , the 3d anumation will look good to see which is smaller. (SAME PRINCIPLE AS CINEMA HALL)
+perspective:800px; Generally use higher perspective value like 800px to clear visible   
+
+B) perspective-origin property defines at from which position the user is looking at the 3D-positioned element. (SEE VIDEO TO CLEAR UNDERSTANDING)
+
+VIDEO59. CSS Transform-Style 
+Used to determine whether child elements should be 3D or flat ( it shows how child element showing behind parent)
+POSSIBLE VALUES : 1) flat(bydefault)     2) preserve-3d (Specifies that child elements will preserve its 3D position)
+FOR EX. ====> https://www.w3schools.com/cssref/playdemo.asp?filename=playcss_transform-style
+Note: This property must be used together with the transform property.
+
+VIDEO60. backface-visibility
+This property is useful when an element is rotated. It lets you choose if the user should see the back face or not.
+
+Note: This property must be used together with the transform property.
+KISI DIV KO ROTATE KIYA 3D MEI, JAB USKA BACK AAYE TO USKI BACK DIKHNI CAHIYE KI NHI 
+
+POSSIBLE VALUES: 
+a) visible:	Default value. The backside is visible (https://www.w3schools.com/cssref/playit.asp?filename=playcss_backface-visibility)
+b) hidden:	The backside is not visible (https://www.w3schools.com/cssref/playit.asp?filename=playcss_backface-visibility&preval=hidden)
+
+Example: https://tympanus.net/codrops-playground/SaraSoueidan/APZYoqfA/editor 
+
+VIDEO61. CSS Animations
+Used to change an element from one style to another style.
+You can change as many CSS properties you want, as many times as you want.
+To use CSS animation, you must first specify some keyframes for the animation. MEANS WITHOUT keyframes , CSS ANIMATION WON'T WORK.
+When you specify CSS styles inside the @keyframes rule, the animation will gradually change from the current style to the new style at certain times.
+
+POSSIBLE VALUES TO USE ANIMATION
+A) animation-name:ani  =======>     Specifies the name of the @keyframes animation (here so animation name is ani)
+B) animation-duration:3s ======>   Specifies how long time an animation should take to complete one cycle (here , it takes 3seconds to complate animation)
+C) animation-timing-function ===> specifies the speed curve of an animation. (CHECK VIDEO 55 ==> SOME IMPORTANT POINTS AND PROPERTIES ===> POINT C)
+FOR EX. animation-timing-function: linear;
+D) animation-delay ======>        Specifies a delay for the start of an animation
+E) animation-iteration-count ====> specifies the number of times an animation should be played. (DEFAULT VALUE IS 1)
+FOR EXAMPLE animation-iteration-count: 1/2/3/.........../infinite;
+F) animation-direction =====> Specifies whether an animation should be played forwards, backwards or in alternate cycles . SOME POSSIBLE VALUES :
+       1) normal	                 Default value. The animation is played as normal (forwards)
+       2) reverse	                 The animation is played in reverse direction (backwards)
+       3) alternate	               The animation is played forwards first, then backwards
+       4) alternate-reverse	       The animation is played backwards first, then forwards
+       NOTE ALL CHECK THESE VALUES ======> https://www.w3schools.com/cssref/playit.asp?filename=playcss_animation-direction
+
+
+VIDEO62. animation-fill-mode AND animation-play-state
+A) animation-fill-mode (specifies a style for the element when the animation is not playing (before it starts, after it ends, or both))
+
+POSSIBLE VALUES: 
+1) none ====>	Default value. 
+2) forwards 
+The target element will retain the style values that are set in the final keyframe of the animation i.e after the animation ends, the element will not reset its styles.
+NOTE: Animation, set by the animation-direction property, determines what the final frame of the animation looks like.
+      For example, if the animation-direction is normal (the default), the final keyframe will be at ( 100% or to ).
+      If the direction is reverse, however, the final keyframe (and thus the styles that are retained) is at (0% or from ).
+
+      The forwards value is probably the most common and useful value for this property.
+      Use it to prevent an animated element from resetting visually after the animation finishes.
+3) backwards
+the target element will take the style values set by the first keyframe of the animation during the animation-delay period. 
+Animation-delay sets a time delay until an animation begins, and animation-fill-mode applies during this delay.
+
+NOTE: If the direction is reverse, key frame will be changed with backwards (as we discussed on above forwards example)
+
+4) both
+It applies the rules of both backwards and forwards: The element will adopt the styles of the first keyframe before the animation begins and 
+the styles of the last keyframe after the animation ends.
+
+B) animation-play-state ( specifies whether the animation is running or paused )
+POSSIBLE VALUES 
+1) paused	  =======>   Specifies that the animation is paused
+2) running	=======>   Specifies that the animation is running .DEFAULT VALUE
+
+FOR EXAMPLE 
+A) IT IS USED WHEN YOU HOVER AN ELEMENT AND YOU WANT TO STOP THE ANIMATION  
+ .box:hover{
+    animation-play-state:paused;
+  }
+            
+B) IT IS USED WHEN YOU HOVER AN ELEMENT AND YOU WANT TO START THE ANIMATION
+box{
+#DO ANIMATION STYLE HERE 
+animation-play-state:paused;
+}
+
+.box:hover{
+    animation-play-state:running;
+  }
+
+VIDEO63. object-fit and object-position
+1) object-fit 
+By default , if we do make an image responsive without object-fit . So image become responsive but image become stretched which looks not good . 
+So object-fit is used to make an image responsive in correct way .  
+
+SOME POSSIBLE VALUES :
+A) cover: image will crop from left and right when we resize the window. But image will not be stretched .
+B) contain: used to display full image without being stretched .
+   It increases or decreases the size of the image to fill the box according to size of image but image will not be stretched and display full image .
+   Rest space , background color will take .
+C) fill: used to display full image but image will be stretched. This is the default value which stretches the image to fit the content box
+D) none: image will ignore the height and width of the parent and retain its original size.
+
+2) object-position
+The object-position property is used together with object-fit to specify how an <img> or <video> should be positioned with x/y coordinates inside its parent box.
+When we use object-fit:cover , image crops from left and right but if do not want from one particular position then we use object-position
+FOR EXAMPLE ==> object-position:left; MEANS CROPPING WILL OCCUR WITH POSITION TOP,RIGHT&BOTTOM. NOT WITH LEFT
+SIMILARLY,      object-position:top; MEANS CROPPING WILL OCCUR WITH POSITION LEFT,RIGHT&BOTTOM. NOT WITH Top e.t.c
+
+
+VIDEO64. user-select ( specifies whether the text of an element can be selected )
+POSSIBLE VALUES
+A) auto	 ======>   Default Value. Text can be selected if the browser allows it
+B) none	 ======>   Prevent text selection
+C) text  ======>   The text can be selected by the user (same as auto but it doesn't depend on browser)
+D) all   ======>   Text selection is made with one click instead of a double-click
+
+
+VIDEO65. box-decoration-break (NOT IMPORTANT)
+
+VIDEO66. Not important but SEE VIDEO can be ask in interview 
+( https://www.youtube.com/watch?v=fwguFr4zrGE&list=PL0b6OzIxLPbzDsI5YXUa01QzxOWyqmrWw&index=66 )
+
+VIDEO 67. BORDER IMAGE (NOT IMPORTANT)
+
+VIDEO 68. CSS Advance Selectors ( Combinator Selectors ) ( VERY VERY IMPORTANT )
+BASICALLY WE HAVE 4 TYPES OF SELCTORS : 
+1) SIMPLE SELCTORS  ( CEHCK VIDEO4 )
+2) Combinator Selectors
+3) Attribute Selectors
+4) Pseaudo classes & Pseaudo elements
+
+NOW LET'S BEGIN OUR VIDEO 68
+A) Combinator Selectors
+1) Descendant selector (space): This selector is used to select all the child elements of the specified tag. 
+   FOR EXAMPLE : 
+   .ani p{
+            CODE HERE 
+        }                   MEANS style all p tags whose parent class is ani 
+
+    div p span{
+      CODE HERE 
+    }                       MEANS style all span whose parent is p tag and that p tag parent is div
+
+2) child selector (>) :  selects all elements that are the children of a specified element.
+FOR EXAMPLE : https://www.w3schools.com/css/tryit.asp?filename=trycss_sel_element_gt
+
+3) Adjacent Sibling Selector (+) : (used to select an element that is directly after another specific element i.e adjacent siblings )
+FOR EXAMPLE : https://www.w3schools.com/css/tryit.asp?filename=trycss_sel_element_pluss 
+
+4) General Sibling Selector (~) : ( used to selects all elements that are next siblings of a specified element)
+FOR EXAMPLE : https://www.w3schools.com/css/tryit.asp?filename=trycss_sel_element_tilde 
+
+B) Attribute Selectors
+1) CSS [attribute] Selector
+The [attribute] selector is used to select elements with a specified attribute.
+FOR EXAMPLE ====> 
+img[src] {
+  background-color: yellow;
+}
+
+2) CSS [attribute="value"] Selector (used to select elements with a specified attribute and value)
+FOR EXAMPLE ====> 
+img[alt="imageText"] {
+  background-color: yellow;
+}
+
+3) CSS [attribute^="value"] Selector ( used to select elements with the specified attribute, whose value starts with the specified value )
+FOR EXAMPLE 
+<h1 class="ttop-header">Welcome</h1>
+<p class="top-text">Hello world!</p>
+
+[class^="to"] {
+  background: yellow;
+}
+
+SO HERE P TAG WILL BE SELCTED 
+
+4) CSS [attribute$="value"] Selector ( used to select elements whose attribute value ends with a specified value )
+FOR EXAMPLE 
+<div class="first_test">The first div element.</div>
+<div class="second">The second div element.</div>
+
+[class$="est"] {
+  background: yellow;
+}
+
+SO HERE FIRST DIV WILL BE SELCTED 
+
+5) CSS [attribute*="value"] Selector ( used to select elements whose attribute value contains a specified value anywhere )
+FOR EXAMPLE 
+<div class="first_test">The first div element.</div>
+<div class="second">The second div element.</div>
+<div class="my-test">The third div element.</div>
+<p class="mytest">This is some text in a paragraph.</p>
+[class*="te"] {
+  background: yellow;
+}
+
+SO HERE SECOND DIV WILL NOT BE SELCTED 
+
+6) CSS [attribute~="value"] Selector ( used to select elements whose attribute value but the value should be seprated )
+FOR EXAMPLE 
+<div class="TestingValue">The first div element.</div>
+<div class="TestingV alue">The second div element.</div>   HERE alue is separated 
+
+[class~="alue"] {
+  background: yellow;
+}
+
+SO HERE SECOND DIV WILL NOT BE SELCTED 
+
+VIDEO70. CSS Pseudo-Classes Selectors ( Pseudo Classes hei na ki Pseudo Elements, neeche jo the vo Pseudo Elements hei )
+POSSIBLE VALUES
+1) :first-child ( Used to style the first child of some other element )
+p:first-child JAHA BHI FIRST CHILD p HOGA USSE SELECT KARO
+FOR EXAMPLE ===> 
+<body>
+<span>yoyo</span>
+<p>ANI1</p>
+<p>ANI2</p>
+
+<div>
+  <p>ANI3</p>
+  <p>ANI4</p>
+</div>
+
+</body>
+
+p:first-child {
+  background-color: yellow;
+}
+
+Here, ANI1 nhi hoga kyuki firdt child span hei na ki ANI1 , but ANI3 hoga kyuki first cild hei vo
+
+2) :last-child ( Used to style the last child of some other element ) SIRF ANI4 HOGA
+p:last-child JAHA BHI LAST CHILD p HOGA USSE SELECT KARO
+
+3) :nth-child(n) 
+Matches every element that is the nth child of its parent.
+n can be a number, a keyword (odd or even), or a formula (like an + b).
+p:nth-child(3) JAHA BHI 3 CHILD p HOGA USSE SELECT KARO
+FOR EXAMPLE:
+A) p:nth-child(odd/even) {
+  background: red;
+  }
+
+B) :nth-child(3) {
+  background: yellow;
+   }                   ( Select every third child of some other element )
+
+C) p:nth-child(3n+0) {
+  background: red;
+}                     ( Selct whose index is a multiple of 3 (will select the third, sixth, ninth, etc) of some other element )
+                    
+
+D) p:nth-child(3n-1) {
+  background: red;
+}                     ( Selct all p elements whose index is a multiple of 3 then we subtract 1 (will select the second, fifth, eight, etc) )
+
+4) :nth-last-child(n)
+Matches every element from last that is the nth child of its parent.
+SAME AS ABOVE POINTS BUT IT SELECTS FROM LAST 
+p:nth-last-child(3) JAHA BHI 3 NEECHE SE CHILD p HOGA USSE SELECT KARO
+
+5) :nth-of-type(n) 
+SAME AS 3 POINT BUT IN 3 POINT , IT SELECTS ONLY CHILD ELEMENT BUT IT CAN SELECT WITHOUT CHILD AND CHILD ELEMENT AS WELL. 
+div:nth-of-type(2) {
+  background: red;
+}                  (SELECT ALL SECOND DIV EITHER IT IS CHILD OR NOT)
+MEANS SIE DIV JO 2 NUMBER PAR HO EITHER IT IS CHILD OR NOT
+
+6) :nth-last-of-type(n)  (SAME AS POINT 4 AND FEATUES WOULD BE SAME AS 5 POINT)
+
+7) :only-child (Selects an element that is the ONLY CHILD of its parent )
+FOR EXAMPLE ====>   https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_only-child 
+p:only-child MEANS AISA P JO SINGLE CHILD HO 
+
+8) :only-of-type  (select every element that is the ONLY CHILD of its TYPE OF ITS PARENT.
+FOR EXAMPLE ====>  https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_only-of-type
+
+NOTE : <div><p>This is a paragraph.</p><p>This is a paragraph.</p></div> (IT WILL NOT BE SELECTED)
+       <div><p>This is a paragraph.</p><span>This is a paragraph.</span></div> (IT WILL BE SELCTED)
+       <div><p>This is a paragraph.</p></div> (IT WILL BE SELCTED)
+
+9) :first-of-type (select first type either it is child or it is not )
+
+p:first-of-type {
+  background: red;
+}
+
+<p>ani</p>
+<p>The second paragraph.</p>
+<p>The third paragraph.</p>
+<p>The fourth paragraph.</p>
+<p>avi</p>
+<div>
+<span>ani</span>
+<p>ani</p>
+<p>avi</p>
+</div>
+
+HERE ONLY ani of tag p will be selcted
+
+10) :last-of-type (select last type either it is child or it is not )
+HERE ONLY avi of tag p will be selcted
+
+11) :empty (select every element that has no children (including text nodes means ==> <p></p> will be selcted but <p>s</p> will not) )
+NOTE: <ul>     </ul>  (IT WILL NOT BE SELCTED BECAUSE IT CONTAIN SPACE BUT <ul></ul> WILL BE SELECTED)
+FOR EXAMPLE ====> https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_empty 
+
+12) :not(selector) (select every element that is NOT the specified element/selector)
+FOR EXAMPLE ====> A) https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_not 
+B) p:not(.test) {
+  color: #ff0000;
+}
+
+13) :link selector ( used to select unvisited links ) 
+a:link{                                                      a{
+  tex-decoration:none;          IS SAME AS                       tex-decoration:none;        
+}                                                            }
+
+14) :visited selector ( used to select visited links ) 
+
+15) :active selector ( used to select and style the active link ) 
+(A link becomes active when you click on it . JITNI DER CLICK KARE RAHEGA USS TIME VO ACTIVE HOGA)
+
+16) :hover selector ( used to select elements when you mouse over them )
+
+NOTE : FOR EXAMPLE 13,14,15 & 16 =====> ADD BELOW CODE TO CHECK =====> https://www.w3schools.com/cssref/tryit.asp?filename=trycss_sel_link_more1
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+/* unvisited link */
+a:link {
+  color: green;
+}
+
+/* visited link */
+a:visited {
+  color: blue;
+}
+
+/* mouse over link */
+a:hover {
+  color: red;
+}
+
+/* selected link */
+a:active {
+  color: yellow;
+} 
+</style>
+</head>
+<body>
+
+<p>Mouse over and click the link: <a href="https://www.mi.com">mi.com</a></p>
+
+</body>
+</html>
+
+17) :target (selects when the hash(#) in the URL and the id of an element are the same)
+NOTE: WORKS WITH ONLY ID
+FOR EXAMPLE =====> https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_target
+
+18) :focus (used to select the element that has focus)
+DO NOT WORK WITH CHECKBOX , RADIO AND SELECTBOX
+FOR EXAMPLE =====> https://www.w3schools.com/cssref/tryit.asp?filename=trycss_sel_focus 
+
+19) :checked (used to select checkbox and radio when they are in the selected state)
+FOR EXAMPLE 
+A) https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_checked 
+B) QUES==> ON SELCT CHECKBOX OR RADIO , LABEL SHOULD BE HIGHLIGHT
+   ANS===> <input type="checkbox" name="car" /> <label>CAR</label>
+           <input type="checkbox" name="bike" /> <label>BIKE</label>
+           
+           input[type="checkbox"]:checked + label {        (REFER TO VIDEO68 =====> CHECK POINT A====> 3 POINT ====> Adjacent Sibling Selector (+))
+               color:red;
+           }
+
+20) :disabled (used to select the disabled element) (MOSTLY USED ON FORM)
+
+21) :enabled  (used to select the enabled element) (MOSTLY USED ON FORM)
+
+20 and 21 EXAMPLE =====> https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_enabled_disabled 
+
+22) :required (selects form elements (only input, select and textarea) which are required)
+FOR EXAMPLE =====> https://www.w3schools.com/cssref/tryit.asp?filename=trycss_sel_required
+
+23) :optional (selects form elements (only input, select and textarea) which are optional)
+FOR EXAMPLE =====> https://www.w3schools.com/cssref/tryit.asp?filename=trycss_sel_optional 
+
+24) :in-range (WORKS ONLY WITH INPUT TYPE NUMBER) (selects all elements with a value that is within a specified range)
+FOR EXAMPLE =====> https://www.w3schools.com/cssref/tryit.asp?filename=trycss_sel_in-range 
+
+25) :out-of-range (WORKS ONLY WITH INPUT TYPE NUMBER) (selects all elements with a value that is  NOT within a specified range.)
+FOR EXAMPLE =====> https://www.w3schools.com/cssref/tryit.asp?filename=trycss_sel_out-of-range 
+
+26) :read-only (selects elements which are "readonly")
+FOR EXAMPLE =====> https://www.w3schools.com/cssref/tryit.asp?filename=trycss_sel_read-only 
+
+27) :read-write (selects elements which are NOT "readonly" MEANS BYDEFAULT VALUE) 
+FOR EXAMPLE =====> https://www.w3schools.com/cssref/tryit.asp?filename=trycss_sel_read-write 
+
+28) :valid (selects element which have valid value)
+FOR EXAMPLE =====>  https://www.w3schools.com/cssref/tryit.asp?filename=trycss_sel_valid
+
+29) :valid (selects element which DOES NOT have valid value)
+FOR EXAMPLE =====> https://www.w3schools.com/cssref/tryit.asp?filename=trycss_sel_invalid
+
+30) :default (selects all default <input> element)
+CAN BE USED ONLY WITH input type (RADIO,CHECKBOX) AND select OPTION
+FOR EXAMPLE =====> https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_sel_default 
+
+31) :root (REFER VIDEO50)
+
+VIDEO71 ( CSS Pseudo Element Selectors  ===>Pseudo Elements hei na ki Pseudo Classes, upar jo the vo Pseudo Classes thi)
+1) ::first-letter (used to add a style to the first letter of the specified selector)
+FOR EXAMPLE ====> https://www.w3schools.com/cssref/tryit.asp?filename=trycss_sel_firstletter
+
+2) ::first-line (used to add a style to the first line of the specified selector)
+FOR EXAMPLE ====> https://www.w3schools.com/cssref/tryit.asp?filename=trycss_sel_firstline 
+
+3) ::selection (used to add a style an element that is selected by a user)
+FOR EXAMPLE ====> https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_selection
+
+4) ::placeholder (used to add a style to placeholder text)
+FOR EXAMPLE ====> https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_placeholder 
+NOTE: V.V.V.V.V.V.V.V.V.V.V.V..V.V.V.V.IMPORTANT : USE color: transparent; to hide placeholder using CSS
+::placeholder {
+  color: transparent;
+}
+
+VIDEO72 
+1) ::after (used to add content after a selected element) (TREAT AS ALAST CHILD)
+we have to use CONTENT property to specify the content to insert.
+FOR EXAMPLE 
+A) https://www.w3schools.com/cssref/tryit.asp?filename=trycss_sel_after 
+B) QUES===> ON HOVER HELLO , ADD TEXT WORLD AFTER HELLO and style WORLD text by making it's color red and font-size 20px
+   ANS====> <p>HELLO</p>
+            p:hover::after{
+             content:"WORLD";
+             color:red;
+             font-size:20px;
+            }
+
+2) ::before (used to add content before a selected element) (TREAT AS A FIRST CHILD)
+we have to use CONTENT property to specify the content to insert.
+FOR EXAMPLE ======> https://www.w3schools.com/cssref/tryit.asp?filename=trycss_sel_before 
+
+NOTE===> WE CAN USE ::after and ::before anywhere but can't use with image (<img> tag)
+
+VIDEO73. attr()
+attr() returns the value of a property. 
+That means that we can define our own custom attribute in html by (data-(CUSTOM ATTRIBUTE NAME)) and 
+then can use the custom attribute value using attr(). It only works on the content property .
+
+FOR EXAMPLE 
+<span data-ani="TESTING">CSS</span>
+span::after{
+  content:attr(data-ani)
+}
+
+VIDEO74. IGNORE 
+
+VIDEO75. caret-color (used to change the color of the cursor (caret) in inputs, textareas, or any element that is editable)
+WE USE TO CHANGE THE COLOR OF CARET ( caret-color: red )  AND EVEN TO REMOVE CARET BY ( caret-color: transparent )
+FOR EXAMPLE =====> https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_caret-color 
+
+VIDEO76. @import Rule
+The @import rule allows you to import a style sheet into another style sheet.
+The @import rule must be at the top of the document.
+
+FOR EXAMPLE ======> 
+Import the "navigation.css" style sheet into the current style sheet
+@import "navigation.css"; /* Using a string */
+or
+@import url("navigation.css"); /* Using a url */
+
+NOTE 
+A) Import the "printstyle.css" style sheet ONLY if the media is print (MEANS printstyle.css styling will be used only when user would be taking print)
+@import "printstyle.css" print;
+
+B) Import the "mobstyle.css" style sheet ONLY if the media is screen and the viewport is maximum 768 pixels 
+(MEANS mobstyle.css styling will be used onlyif the media is screen and the viewport is maximum 768 pixels)
+@import "mobstyle.css" screen and (max-width: 768px);
+
+VIDEO77. SEE VIDEO IF YOU ARE BEGINNER
+
+VIDEO78. IGNORE
+
+VIDEO79. CSS Display Flow-Root
+USE =====> LET'S SUPPOSE EK DIV HEI AUR USKE ANDAR EK AUR DIV HEI AND ISS CHILD DIV KE ANDAR AGAR HUM FLOAT PROPERTY USE KARTE HEI TO
+           HUMESHA ISSUE CREATE HOTA HEI KI PARENT DIV PROPER BAND NHI HOTA . WE CAN SOLVE THIS PROBLEM BY 2 OLD WAYS 
+           A) BY ADDING overflow:auto TO PARENT DIV BUT IT IS NOT RECOMMENDED BECAUSE SOMETIMES IT WORKS AND SOMETIMES IT DOESN'T 
+           B) BY ADDING ::after{
+                          content:"",
+                          display:black;
+                          clear:both;
+                         }              MOST OF THE TIME WE USE THIS WAY TO SOLVE THIS PROBLEM 
+
+UPAR JO BHI LIKHA YAHA SE SMJH =====> https://www.w3schools.com/howto/howto_css_clearfix.asp 
+
+HERE, B) SOLUTION IS GOOD BUT WE CAN SOLVE THIS PROBLEM BY CSS Display Flow-Root . SO THAT WE DON'T HAVE TO WRITE MORE LINE OF CODE AS IN B) SOLUTION
+SO THE SOLUTION IS =====> ADD PARENT CLASS TO : display:flow-root (BUT THIS PROPERTY IS NOT SUPPORTED BY ALL BROWSER)
+
+UPAR JO BHI LIKHA YAHA SE SMJH =====> https://codepen.io/rachelandrew/pen/RKgevX 
+
+VIDEO 80 TO 95. CSS GRID     (REFER THIS PLAYLIST TOO FOR GRID ===> https://www.youtube.com/playlist?list=PLwGdqUZWnOp0kembd0GbVKonmyXeepQ7Q )
+A) SEE 80/81 VIDEO WHICH IS VERY VERY IMPORTANT AND IF YOU ARE USING GRID THEN 99% ONLY THESE PROPERITES WE USE 
+
+FOR ADVANCE GRID PROPERITES SEE BELOW POINTS: (WE DO STYLE IN GRID ELEMENTS , NOT IN PARENT)
+B) IF YOU WANT TO POSITION ITEM MEANS CHANGE 6TH GRID ITEM POSITION TO 1ST GRID ITEM AND MAKE 1ST GRID ITEM POSITION TO 6TH GRID ITEM ===> 
+grid-column-start:1 (property defines on which column-line the item will start)
+grid-column-end:3 (property defines on which column-line the item will end)
+grid-row-start:2 (property defines on which row-line the item will start)
+grid-row-end:3 (property defines on which row-line the item will end)
+
+SHORT FORM OF ABOVE POINTS 
+grid-column: grid-column-start/grid-column-end;    AND       grid-row: grid-row-start/grid-row-end;   MEANS ======>
+grid-column: 1/3;                                  AND       grid-row: 2/3;
+
+SHORT FORM OF ABOVE POINTS 
+grid-area: grid-row-start/grid-column-start/grid-row-end/grid-column-end;   MEANS========> 
+grid-area: 2/1/3/3;
+
+YOU CAN USE ANY ABOVE THREE POINTS TO POSITIONING GRID ELEMENTS BUT 2 POINT IS PERFERABLE TO DO 
+
+C) DON'T WATCH VIDEO 84 ======> WATCH THIS ( https://www.youtube.com/watch?v=zQFDha7qDbQ )
+
+D) CSS GRID LINES NAMING (IF YOU USE THIS IN INTERVIEW , INTERVIEWER WILL ATTRACT ) (ONLY FOR SENIOR SEVELOPER , NOT FOR FRESHER)
+WATCH VIDEO85 
+
+VIDEO86 IGNORE
+
+
+
+
+VIDEO112 Text-Decoration-Thickness ( specifies the thickness of the decoration line )
+FOR EXAMPLE ===> https://www.w3schools.com/cssref/tryit.asp?filename=trycss_text-decoration-thickness 
+
+VIDEO113 Text-Underline-Offset ( Used to add space between text and text decoration line)
+FOR EXAMPLE ===>   https://www.youtube.com/watch?v=Y2kTnegvv7E&list=PL0b6OzIxLPbzDsI5YXUa01QzxOWyqmrWw&index=113  (SEE FROM 1:30)
+
+VIDEO114 currentcolor ( allows to use the current value of the color property, without writing the actual color value )
+FOR EXAMPLE 
+.test{
+  color:red;
+  #REST CODE 
+  border: 2px solid CurrentColor
+}
+
+.test h2{
+  border-bottom: 2px solid CurrentColor;
+}
+
+NOTE: DON'T USE CurrentColor with background means 
+.test ani{
+  color:red;
+  background:CurrentColor;
+}
+IT WILL NOT WORK PROPERLY 
+
+VIDEO115 ::marker ( selects the marker of a list item )
+FOR EXAMPLE =====> https://www.w3schools.com/cssref/tryit.asp?filename=trycss_sel_marker 
+
+VIDEO116 CSS !important property 
+CSS PRIORITY ORDER ======> 
+Important (!important) > Inline >id nesting > id > class nesting > class > tag nesting > tag  
+
+!important rule in CSS is used to add more importance to a property/value than normal.
+In fact, if you use the !important rule, it will override ALL previous styling rules.
+FOR EXAMPLE ====>  https://www.w3schools.com/css/tryit.asp?filename=trycss_important 
+
+VIDEO117. @support  (NOT FOR FRESHER) 
+@supports (condition) {
+    //  Style you want to apply
+}
+
+If condition supports in browser then block of code is executed else not.
+FOR EXAMPLE =====> 
+@supports (display: flex) {
+            div h1 {
+                display: flex;
+                justify-content: flex-start;
+                color: green;
+                border: 3px solid green;
+                padding: 20px;
+                font-size: 40px;
+            }
+        }
+
+VIDEO118. CSS :placeholder-shown (used to style when user has not typed anything in the textarea or input tag) (WORKS ONLY WITH textarea or input Tag )
+FOR EXAMPLE ======> https://codepen.io/team/css-tricks/pen/NxdJgV   
+
+VIDEO119. IN VIDEO29A , WE CAN USE ONLY LIMITED LIST STYLE TYPE BUT NOW WE CAN USE SO MANY STYLE TYPES . FOR EXAMPLE =====> 
+A) YOU CAN TYPE ANY STRING 
+FOR EXAMPLE ====> list-style-type : "Test";
+
+B) YOU CAN DEFINE ANY EMOJI  (YOU CAN CHECK SO MANY EMOJI BY TYPING (html symbols) OR YOU CAN REFER TO THIS WEBSITE ( https://www.toptal.com/designers/htmlarrows/symbols/ ))
+FOR EXAMPLE ====> list-style-type : ☝; 
+
+VIDEO120. CSS Scroll-Behavior (SEE THIS VIDEO WHENEVER YOU GET CHANCE) 
+Specifies whether to smoothly animate the scroll position, instead of a straight jump (when the user clicks on a link within a scrollable box.)
+FOR EXAMPLE ====> https://www.w3schools.com/cssref/tryit.asp?filename=trycss_scroll_behavior     
+
+VIDEO121. WATCH VIDEO121 AND THEN WATCH THIS SHORT VIDEO TOO ( https://www.youtube.com/watch?v=MsmvhpBXosM ) 
+READ THIS ARTICLE EACH AND EVERY LINE ( https://blog.logrocket.com/how-to-use-css-scroll-snap/ )
+FOR EXAMPLE ====>
+A) https://scrimba.com/scrim/coe9643ac9e76748b3015c5ed
+B) https://codepen.io/nrifki/pen/LYVygxW
+
+VIDEO122. 
+::file-selector-button (Used to style the file upload button) 
+::-webkit-file-upload-button is used to support Safari, Chrome and Opera.
+
+SYNTAX
+Selector::file-selector-button {
+   attribute: /*value*/
+}
+Selector::-webkit-file-upload-button {
+   attribute: /*value*/
+}
+
+FOR EXAMPLE =====> https://codepen.io/geoffgraham/pen/OJvGqjV       (remove ::file-selector-button to know the difference)
+
+VIDEO123. backdrop-filter ( V.V.V.V.V.V.IMPORTANT )
+This property lets you apply graphical effects such as blurring or color shifting to the area behind an element. 
+Because it applies to everything behind the element, to see the effect you must make the element's background at least partially transparent.
+FOR EXAMPLE
+A) https://www.w3schools.com/cssref/tryit.asp?filename=trycss3_backdrop-filter 
+B) https://www.w3schools.com/cssref/playdemo.asp?filename=playcss_backdrop-filter 
+
+VIDEO124. :is() Pseudo Class 
+BEFORE WHAT WE DO       =======>   #abc p, #xyz p { CODE }     ( IF p is contained inside container having id xyz or abc then code will be executed )
+NOW WHAT SHOULD WE DO   =======>   :is(#abc,#xyz) p{ CODE }    ( IF p is contained inside container having id xyz or abc then code will be executed )
+
+FOR EXAMPLE ====> 
+A) #test :is(h1,h2,h3){ CODE }
+B) :is(#test1,#test2) h1{ CODE }
+C) :is(#test1,#test2) :is(h1,p){ CODE }
+D) :is(#test1,#test2) p:hover{ CODE }
+
+VIDEO125. CSS text-orientation (used to change the text characters in a vertical line)
+IT ONLY WORKS WITH writing-mode and it's vertical mode PROPERTY , not horizontal  (REFER TO VIDEO25)
+
+FOR EXAMPLE ===>
+A) BYDEFAULT PROPERTY ===>  https://www.w3docs.com/tools/editor/9658  (SO IGNORE mixed Property)
+B) https://www.w3docs.com/tools/editor/9660 
+C) https://www.w3docs.com/tools/editor/9662 
+
+VIDEO126. CSS :focus-within (Used to style parent container when it's child element get focused)
+FOR EXAMPLE ===> 
+A) BEST EXAMPLE ====> SEE THIS ====>  https://www.digitalocean.com/community/tutorials/css-focus-within-pseudo-class    
+B) form{
+    background:white;
+  }
+
+BYDEFAULT WE SET, BACKGROUND COLOR OF PARENT COMPONENT FORM IS WHITE 
+form:focus-within{
+    background:red;
+  }
+
+So , when child component of parent form will get focused ,  BACKGROUND COLOR OF PARENT COMPONENT FORM WILL BE RED  
+C) form>div:focus-within{
+    background:yellow;
+  }
+JO CHILD COMPONENT FOCUS HUA HEI USKA PARENT DIV KO BHI STYLE KAR SKTE HEI
+
+VIDEO127. SEE VIDEO 
+
+VIDEO128. Accent-Color (used to change the color of <input type="checkbox">, <input type="radio">, <input type="range"> and <progress> )
+FOR EXAMPLE ======> https://www.w3schools.com/cssref/tryit.asp?filename=trycss4_accent-color      
+
+VIDEO129. prefers-color-scheme (used to detect if the user has requested a light or dark color theme)
+@media (prefers-color-scheme: dark) {                   IF USER IS ON DARK MODE
+ CODE 
+}                                           
+
+@media (prefers-color-scheme: light) {                  IF USER IS ON LIGHT MODE
+CODE
+}
+
+VIDEO130. Aspect-Ratio (THIS PROPERTY IS USED TO MAKE RESPONSIVE) (VERY VERY VERY IMPORTANT)
+READ ARTICLES AND VIDEOS ON THIS TOPIC ( https://css-irl.info/aspect-ratio-is-great/  , WATCH AND READ MORE ARTICLES)
+Aspect Ratio of image is the ratio of its width to its height. Represented by a colon (as A: B) .
+It determines how your image (or any other shape) would appear on the web page.
+
+
+.ani{
+  width:50px;
+  aspect-ratio:1/1;           MEANS .ani CLASS HAVE WIDTH OF 50PX AND HEIGHT OF 50PX
+} 
+
+IF aspect-ratio:1/2;          MEANS .ani CLASS HAVE WIDTH OF 50PX AND HEIGHT OF 100PX
+
+NOTE: 
+A) Agar content zyda hua aur height container ki zyda hui to automatically div ki height bad jayegi . 
+So aspect-ratio minimum height ki terah behave krta hei
+B) if you don't want ki height automatically bade . So use overflow:auto property . Agar content zyda hoyga to scrollbar aa jyga.
+C) aspect-ratio work nhi karega agar tu width aur height dono define kar dega .
+D) QUES ====> MAKE SQUARE IMAGE RESPONSIVE 
+   ANS  ====> 
+   img{
+   width:200px;
+   aspect-ratio:1/1; 
+   object-fit:cover;
+   }
+
+   @media screen and (max-width:500px){
+    width:100%
+   }                SO 500px se kam jaise hi hoga, image ki width 100% ho jygi aur humne upar aspect-ratio lagaya hei to image responsive ho jygi 
+
+E) aspect-ratio:16/9 is used to make VIDEO RESPONSIVE
+
+
+VIDEO131. CSS display-mode (used to style the display mode(i.e browser/fullscreen/minimal-ui) of an application)
+@media all and (display-mode: browser/fullscreen/minimal-ui) {
+  body {
+    margin: 0;
+    border: 5px solid black;
+  }
+}
+
+browser         (application is opened in a browser but not in fullscreen)
+fullscreen      (application is opened in fullscreen)
+minimal-ui      (application is opened in a browser with minimal set of UI elements for controlling navigation)
+
+
+VIDEO132. CSS Fullscreen Pseudo (used to style an element that is being displayed in full-screen mode)
+FOR EXAMPLE======> 
+<div id="box">
+<p>FULL SCREEN MODE</p>
+</div>
+<br>
+<button onClick="document.getElementById('box').requestFullScreen();"></button>    
+
+NOTE ====> ( requestFullScreen() is used to make the element be displayed in fullscreen mode )
+
+#box{
+  width:200px;
+  height:300px;
+  background:red;
+}
+
+#box:fullscreen{
+  background:red;
+  font-size:30px;
+}
+
+VIDEO133. CSS Min() Max() Clamp() Function  (ADVANCE TOPIC) (VERY VERY VERY IMPORTANT , DO RESEARCH ON THIS TOPIC)
+min() ====> uses the smallest value, from a comma-separated list of values, as the property value.
+FOR EXAMPLE ======> https://www.w3schools.com/cssref/tryit.asp?filename=trycss_func_min 
+
+max() ====> uses the largest value, from a comma-separated list of values, as the property value.
+FOR EXAMPLE ======> https://www.w3schools.com/cssref/tryit.asp?filename=trycss_func_max 
+
+clamp() ===> it is used to get preferable value  ===> clamp(min,val,max)
+For example ====> width:clamp(350px,50%,500px); So let's discuss it below 
+If container width is 900px =====> So 900px * 50% = 450px  =====> So final width would be 450px because it is in range.
+If container width is 1200px =====> So 1200px * 50% = 600px  =====> So final width would be 500px because max value can be of 500px.
+If container width is 600px =====> So 600px * 50% = 300px  =====> So final width would be 350px because min value can be of 350px.
+FOR EXAMPLE ======> 
+https://www.geeksforgeeks.org/css-clamp-method/ 
+https://blog.bitsrc.io/css-clamp-the-responsive-combination-weve-all-been-waiting-for-f1ce1981ea6e 
+
+BEST EXAMPLE ON CSS Min() Max() Clamp() =========> https://web.dev/min-max-clamp/     
+
+VIDEO134. CSS Orientation Media Rule (ADVANCE TOPIC) (VERY VERY VERY IMPORTANT , DO RESEARCH ON THIS TOPIC)
+MUST WATCH THIS VIDEO ====> https://www.youtube.com/watch?v=lTcYDLiHPeI&list=PL0b6OzIxLPbzDsI5YXUa01QzxOWyqmrWw&index=134  
+It allows to test the orientation of the viewport (Landscape and portrait) 
+It is used to make website responsive (when you rotate the mobile screen)
+FOR EXAMPLE =======> 
+A) https://developer.mozilla.org/en-US/docs/Web/CSS/@media/orientation#:~:text=The%20orientation%20CSS%20media%20feature,not%20correspond%20to%20device%20orientation. 
+B) https://developer.mozilla.org/en-US/docs/Web/API/CSS_Object_Model/Managing_screen_orientation 
+
+VIDEO135. :has Pseudo Class (USED TO STYLE PARENT SELECTOR BY CHECKING IT'S CHILD SELECTOR) (SHAYAD CHROME BROWSER PAR ABHI AAYA NHI , ONLY AT SAFARI)
+
+FOR EXAMPLE=====> 
+<div>
+<section>
+<h2></h2>
+</section>
+</div>        HTML1
+
+div:has(h2){
+
+}      MEANS AISE div KO SELECT KARE JISME KHI PAR BHI h2 AARA HEI
+
+Note 
+A) You can pass multiple selector in has selector ======> :has(span,h1,h2,h3)
+B) div:has(> h2)  ======> MEANS AISE div KO SELECT KARE JISKA DIRECT CHILD h2 hHO , NA KI GRAND CHILD 
+<div>
+<h2></h2>
+<section>
+<p></p>
+</section>
+</div>      HTML2
+SO HTML2 MEI SELECT KAR LEGA PAR HTML1 MEI NHI KYUKI h2 VAHA GRAND CHILD HEI div KA 
+C) div:has(h2 + p)  ======> MEANS AISE div KO SELECT KARE JISME h2 KE TURANT BAAD p TAG HO
+<div>
+<h2></h2>
+<p></p>
+<section>
+</section>
+</div>      HTML3
+SO HTML3 MEI SELECT KAR LEGA PAR HTML2 MEI NHI KYUKI p VAHA h2 KE TURANT BAAD NHI HEI 
+D) h2:has(+p){}  ======> MEANS AISE h2 KO SELECT KARE JISME h2 KE TURANT BAAD p TAG HO
+E) div:not(:has(h2,h3,span)){} =======> MEANS AISE DIV KO SELECT KAR JISME h2,h3,span NHI HO
+F) Aise li KO SELECT KAR JISKE DIV MEI h2 AARA HO AND li BHI USSI DIV MEI HO
+<div>
+<h2>TEST</h2>
+<ul>
+<li>CAR</li>
+<li>BIKE</li>
+<li>SCOOTER</li>
+</ul>
+</div>     HTML4
+div:has(h2) li{}
+G) AISE div SELECT JISME KOI BHI TAG EMPTY HEI ===> div:has(*:empty){}
+H) AISE div SELECT JISME KOI BHI TAG EMPTY NA HEI ===> div:not(:has(*:empty)){}
+I) WE CAN USE THIS SELECTOR ON FORM AS WELL
+       1) form:has(input[type='checkbox']:checked) { }            MEANS FORM KO SELECT KAR JAB CHECKBOX CHECKED HO
+       2) form:has(input[type='checkbox']:checked) button { }     MEANS FORM KE BUTTON KO SELECT KAR JAB CHECKBOX CHECKED HO
+J) label:has(+ input[type='checkbox']:checked) { }                MEANS Aise LABEL KO SELECT KAR JISKA TURANT BAAD CHECKBOX CHECKED HO
+H) label:has(+ input:focus) { }                                   MEANS Aise LABEL KO SELECT KAR JISKA TURANT BAAD INPUT FOCUSED HO
+
+VIDEO136. CSS Print Media (used to change the appearance of your web page when it's printed on a paper) (YE VIDEO TBHI DEKH AGAR ZAROORAT PADE WORK MEI)
+@media print{
+
+}
+
+VIDEO137. IGNORE
+
+
+
+
+NOTE ====> FLEX VIDEOS ARE IMPORTANT ======> VIDEO98 IS IMPORTANT =====> YOU CAN CHECK PRACTICAL USE IN CONTACT FILTERS

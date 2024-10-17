@@ -1,0 +1,395 @@
+##############   LOGICS   ##############
+OTP
+const OTP = ({ number = 4, otpSuccess = ()=>{}  }) => {
+  const inputRef = useRef([]);
+  const [otp, setOtp] = useState([...Array(number).fill('') ]); // fill() because otherwise it prints undefined
+
+  // Auto Focus Logic
+  useEffect(() => {
+    inputRef.current[0].focus();
+  }, []);
+
+  useEffect(() => {
+    console.log('aniotp',otp);
+  }, [ otp ]);
+
+  const handleChange = (index, value) => {
+
+    // ONLY LATEST VALUE GO AND PREVIOUS VALUE REMOVED - START
+    const newOtp = [...otp];
+    newOtp[index] = value.substring(value.length - 1);
+    setOtp( newOtp );
+
+
+    // MOVE TO NEXT FIELD LOGIC
+    if( index + 1 < number ){
+        inputRef.current[index + 1 ].focus();
+    }
+
+
+    // Logic for OTP COMPLETION
+    const combinedOtp = newOtp.join('');
+    if( combinedOtp.length === number ){
+        otpSuccess( combinedOtp );
+    }
+
+  };
+
+  return (
+    <div className="otp-container">
+      {otp.map((value, index) => {
+        return (
+          <input
+            key={ index }
+            type="text"
+            className="otp-input"
+            ref={(references) => (inputRef.current[index] = references)} // Auto Focus Logic
+            onChange={(e) => handleChange(index, e.target.value)}
+            value={value}
+          />
+        );
+      })}
+    </div>
+  );
+};
+
+Breadcrumb
+<div className={ 'breadcrumb' }>
+			{ paths.map( ( path, index ) => (
+				<span
+					key={ index }
+					className={ `fkcrm-item ${
+						index === paths.length - 1 ? 'active' : ''
+					}` }
+				>
+					{ index === paths.length - 1 ? (
+						path.title
+					) : (
+						<>
+							<a
+								href={ () => path.url }
+								type="fkcrm"
+								className="fkcrm-a-no-underline fkcrm-cursor-pointer"
+							>
+								{ path.title }
+							</a>
+							<SVGIcon icon="tailless-arrow-forward" size="14" />
+						</>
+					) }
+				</span>
+			) ) }
+		</div>
+
+Grid Light
+    useEffect(() => {
+    if (selected.length === 0) {
+      // If array becomes empty, clear the timeout
+      return;
+    }
+
+    if ( isAllSelected ) {
+        const timer = setTimeout(() => {
+            setSelected(prev => console.log('aniprev',prev));
+        }, 300);
+    
+        return () => clearTimeout(timer);
+    }
+
+  }, [selected, isAllSelected]);
+
+{[...Array(9)].map((data, index) => {
+          return (
+            <div
+              className={`grid-light-box ${
+                selected.includes(index) ? "active" : ""
+              }`}
+              onClick={() => {
+                if (!selected.includes(index)) { // Remove Dupicate keys
+                  setSelected((prev) => [...prev, index]);
+                  selected.length === 7 && setIsAllSelected( true );
+                }
+              }}
+            ></div>
+          );
+        })}
+
+.grid-light-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+  justify-content: center;
+}
+
+.grid-light-box-container {
+  height: 500px;
+  width: 500px;
+  border: 1px solid;
+  padding: 14px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+
+  .grid-light-box {
+    border: 1px solid;
+    width: auto; // Automatically take width in remaining space
+    height: auto; // Automatically take height in remaining space
+    cursor: pointer;
+
+    &:nth-child(5) {
+      visibility: hidden; // use visibility not display none;
+    }
+
+    &.active {
+      background-color: green;
+    }
+  }
+}
+
+VS CODE SIDEBAR
+const Files = () => {
+  const [list, setList] = useState(dummyData);
+  const [openedKeys, setOpenedKeys] = useState([]);
+  const [showInput, setShowInput] = useState(null);
+
+  const handleKey = (id) => {
+    if (openedKeys?.includes(id)) {
+      const updatedKeys = openedKeys.filter((data) => data !== id);
+      setOpenedKeys(updatedKeys);
+    } else {
+      setOpenedKeys((prev) => [...prev, id]);
+    }
+  };
+
+  // Imprtant Step
+  const keyPressHandle = (e) => {
+    if (e.key === "Enter") {
+      list[showInput].files.push({
+        name: "anirudh",
+      });
+      const updatedList = JSON.parse( JSON.stringify( list ) );
+      setList( updatedList );
+      setShowInput(null)
+    }
+  };
+
+  return (
+    <div className="sidebar-container">
+      {list.map((data) => {
+        return (
+          <>
+            <div className="sidebar-name" onClick={() => handleKey(data.id)}>
+              {" "}
+              {openedKeys?.includes(data.id) ? "⬇️" : "➡️"} {data.name}{" "}
+              <button
+                onClick={(e) => {
+                  setShowInput(data.id);
+                  e.stopPropagation();
+                }}
+              >
+                Add
+              </button>
+              <br />
+              {showInput === data.id ? (
+                <input type="text" onKeyDown={keyPressHandle} />
+              ) : null}
+            </div>
+            {openedKeys?.includes(data.id)
+              ? data.files.map((fileData) => {
+                  return <div className="sidebar-name">📁 {fileData.name}</div>;
+                })
+              : null}
+          </>
+        );
+      })}
+    </div>
+  );
+};
+
+export default Files;
+
+const dummyData = [
+  {
+    name: "Folder 1",
+    id: 0,
+    files: [
+      {
+        name: "File1",
+      },
+      {
+        name: "File2",
+      },
+    ],
+  },
+  {
+    name: "Folder 1",
+    id: 1,
+    files: [
+      {
+        name: "File1",
+      },
+      {
+        name: "File2",
+      },
+    ],
+  },
+];
+
+Accordion
+function AccordionItem({ title, content, isOpen, onItemClick }) {
+  return (
+    <div className={`accordion-item ${isOpen ? 'open' : ''}`}>
+      <div className="accordion-title" onClick={onItemClick}>
+        {title}
+      </div>
+      <div className="accordion-content">{isOpen && content}</div>
+    </div>
+  );
+}
+
+function Accordion({ items }) {
+  const [openIndex, setOpenIndex] = useState(null);
+
+  const handleItemClick = index => {
+    setOpenIndex(index === openIndex ? null : index);
+  };
+
+  return (
+    <div className="accordion">
+      {items.map((item, index) => (
+        <AccordionItem
+          key={index}
+          title={item.title}
+          content={item.content}
+          isOpen={index === openIndex}
+          onItemClick={() => handleItemClick(index)}
+        />
+      ))}
+    </div>
+  );
+}
+
+export default Accordion;
+
+ProgressBar
+<div className="progress-bar-container">
+    <div className="progress-bar-count" style={{ '--count' : `${ count }%` }}></div>
+  </div>
+
+.progress-bar-container{
+    position: relative;
+    background-color: gray;
+    width: 600px;
+    height: 18px;
+    border-radius: 12px;
+
+    .progress-bar-count{
+        position: absolute;
+        top: 0;
+        left: 0;
+        background-color: green;
+        width: var(--count);
+        height: 100%;  // ALSO IMPORTANT OTHERWISE NOT VISIBLE
+        border-radius: 12px;
+    }
+}
+
+Carousel
+   const prevSlide = () => {
+    setCount((prev) => (prev === 0 ? imageUrls.length - 1 : (prev - 1) % 3));
+  };
+
+  const nextSlide = () => {
+    setCount((prev) => (prev + 1) % 3);
+  };
+
+  useEffect(() => {
+    const time = setTimeout(() => {
+      setCount((prev) => (prev + 1) % 3);
+    }, 1000);
+
+    return () => {
+      clearInterval(time);
+    };
+  }, [count]);
+
+   <img src={imageUrls[count]} alt={`image-${count}`}></img>
+
+Modal
+createPortal(
+        modalContent(), document.getElementById('modalRoot')
+)
+
+// STYLING 
+.modal-overlay {
+  background-color: rgba(black, 0.35);
+  height: 100vh;
+  width: 100vw;
+
+  .modal-container {
+    position: absolute;
+    background-color: white;
+    left: 50%;
+    transform: translateX(-50%);
+    top: 71px;
+    border: 120px;
+    overflow: hidden;
+    border-radius: 12px;
+  }}
+
+PAGINATION 
+total 50 / show 10 ===> pagination count 5
+total 196 / show 10 ===> pagination count 19.6.  So that's why ==> Math.round(196 /10);
+
+[...Array( pagination count )].map(( data, index ) => {
+    return <div onclick={() => setCurrentPage( index + 1 )  }>{ index + 1 }</div>
+} )
+
+fetch('https://dummyjson.com/products?limit=10&skip=${ ( CurrentPage - 1 ) * 10 } );
+
+INFINITE SCROLLING 
+if( window.innerHeight + document.documentElement.scrollTop >= document.documentElement.scrollHeight ) setPage((prev) => prev + 1 )
+
+useEffect(() => {
+    window.addEventListener('scroll', handleScroll);
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+    };
+  });
+
+To Do List
+const id = Math.floor( Math.random() * 100 );
+const data = {
+    id : id,
+    inputText : inputText,
+};
+
+ADD LIST ==> setList( ( prev )=> [...prev, data ]  )
+DELETE LIST ==> list.filter(( data )=> data.id !== id )
+Edit List ===>  function(id, updatedText){
+    list.map(( data )=>{
+        if( data.id === id ){
+         return {...data, inputText : updatedText  }
+        }
+        return data;
+       })
+}
+
+Wheather fetch data according to country name 
+const fetchWheather = async () => {
+  try {
+    const fetchData = await fetch(`api?wheather=${inputText}`);
+    const data = await fetchData.json();
+    if (data.length === 0) {
+      setWheatherData("NO result found");
+    } else {
+      setWheatherData(data);
+    }
+  } catch (e) {
+    console.log(e);
+  }
+};
+
+useEffect(() => {
+  fetchWheather();
+}, [inputText]);

@@ -1,0 +1,278 @@
+################# Optimize Points ##############
+
+In React, if your component has so many lines of code . It means you are not doing in correct way. So Always create small component if you can
+
+ 2. Code Splitting:
+It uses lazy and Suspense tool/library, which helps load component when it's needed by the user.
+Suspense: It is used to show fallback content when Lazy component is not loaded 
+const ExampleComponent = React.lazy(() => import('./ExampleComponent'));  
+
+      <Suspense fallback={<div>Loading...</div>}>
+      <ExampleComponent />
+       </Suspense>
+
+3. If you want to maintain & update state in parent component from child component . DO like this :
+     const Child = ({ onClick })=>{
+            return onClick={ onClick }
+     }
+
+   const Parent = () => {
+    const handleClick = ()=>{ //DO ACTION HERE }
+
+    return (
+      <Child  onClick = { handleClick } />
+    )}
+
+4. REDUCE, UseMEMO, USEREF, CALLBACK
+
+5.  a) pointer-events: none;
+     b) dumb componets: dumb componets are stateless function component
+
+6. When you need array ====> [ ...Array( 5 ) ]  ( it will create array of undined ) ,  [...Array(10).keys()] ( it will create array starts with 0,1,2,3.... )
+
+7. What is props.children ?  ( Check Custom Button : bwf-button )
+Example ===>  <Other><h1>This is child component</h1></Other>
+
+const Other = (props) => <div>{props.children}</div>
+
+8. UseRef
+      a)  By using Ref, we can check how many times our application re rendered. If we do with state then it will go into infinite loops because in case of state,  whole component re-renders but in case of ref , it doesnot re-renders.    OR     DIFFERENCE B/W STATE AND REF ( SAME ANSWER )
+         const counter = useRef("");
+         useEffect(()=>{
+          counter.current =  counter.current + 1;
+        })
+      b) By using Ref, we can get previous state value .
+           const prevState = useRef("");
+           useEffect(()=>{
+             prevState.current =  inputValue;
+        },[inputValue])    REASON =====> THIS CODE WILL RUN BEFORE RE-RENDERS, MEANS IT WILL STORE IT'S PREVIOUS VALUE
+      c) BY using refs, we can DIRECTLY access DOM element by passing ref attribute without re-render the application . For example , on button click , i can get input DOM elements values.
+             const inputField = useRef(null);
+            # inputField.current.focus();
+            # inputField.current.value = "Anirudh";
+            # inputField.current.style.border = "2px solid Red";
+      c) Detecting outside clicks ( https://youtu.be/Tj499K6bGhU )
+
+9. Hacks
+          a) Padding poore document par lagi ho, but kuch element ke liye suppose vo padding use na ho to vaha margin use kar negative me . For example : padding-left: 24px use hori hei whole                                 document mei , so uss element par margin: -24px laga de.
+         b) pointer-events: none; Use this when koi bhi javascript event action na karana ho using CSS. Like Select box ke label par click pe focus na ho select so use there
+
+10. Context API =====>  https://www.freecodecamp.org/news/context-api-in-react/
+
+11. On condition true add data to object/Array otherwise not:
+ const obj = {
+  label: "default",
+  ...(condition ? { key: "Default" } : {}),
+};
+
+const obj = [
+    {
+        ani: 'ani',
+        age: 'age',
+    },
+    ...( condition
+        ? [{
+                    avi: 'avi',
+                    age: 'age',
+                },
+          ]
+        : [] ),
+];
+
+12. UseMEMO ( Used to memoize the value )  VS CALLBACK ( Used to memoize the function ) VS memo ( Used to memoize the entire componet means to prevent a component from re-rendering unless any props of it's componet have changed. )
+CALLBACK ( USECASE ==> ( Child component use kar rahe ho , aur parent mei koi bhi state update ho jisse child ko lena dena na ho . Fir bhi Child component re-render ho ) SO kbhi bhi is case mei aur ya koi function call hora ho baar baar but hum cahte hei vo function & child component tbhi render ho jab change ho usme . Then use CallBack ) Means One reason to use useCallback is to prevent a component from re-rendering unless its props have changed.
+
+13. propTypes, defaultProps
+EXAMPLE ====> Student.propTypes = {
+                                 name: propTypes.string,
+                                 age: propTypes.number,
+                               }
+
+                             Student.defaultProps = {
+                                  name: "Anirudh',
+                                  age: 20,
+                               }
+
+14. debounce and throttle react ( It is used to improve user experience where rapid changes may cause unwanted flickering . For example, in my current organization, i had created an inmput number field, when i was doing rapid changes like i was incrementing the number then flickering was happening . Another example, We can use it in search componets, like when user type long words then we don't need to search and hit api for every single word )
+BY USING JAVASCRIPT =====> https://www.thapatechnical.com/2023/02/throttling-vs-debouncing-in-javascript.html
+TO USE IN REACT ===> USE LODASH LIBRARY
+
+Debounce is used to call a function after event like typing or button clicks have finished . It is used for events like typing or button clicks. Whereas
+Throttling is used to call a function EVERYTIME( IMPORTANT WORD ) after some particular time. It is used for events like resizing and scrolling.
+
+15. memo() =======> Wrapping the component by memo, it doesn't re-render the component if its props have not changed.
+
+16. Difference between Controlled and Uncontrolled Components:
+In a controlled component react, data is handled by state  whereas, in an uncontrolled component, data is handled by DOM or by using Refs
+
+17. Props shorthand
+ <Child placeholder="TEXT HERE" />
+
+  const Child = (props) => <input {...props} />
+
+18. forwardRef() ========> By using ForwardRef, we can use reference of child element in parent component ( Means passing ref from child to parent ) . We create ref in parent component & pass to child component and then we use reference of element in child component and we can use that child element's reference to parent component by using ForwarRef().
+CHECK DROPDOWN COMPONENT
+
+EXAMPLE ====>
+https://codepen.io/jmsherry/pen/xxKNMjE
+https://codepen.io/kinsomicrote/embed/YvdywJ?height=400&theme-id=1&slug-hash=YvdywJ&default-tab=js%2Cresult&user=kinsomicrote&pen-title=React%20Ref%20-%20forward%20Ref
+
+19. createPortal ( It is used to render a React component into a different DOM node
+ReactDOM.createPortal(
+    <>
+    </>,
+    document.querySelector(".myPortalModalDiv")
+  );
+
+20. :focus-within ( child par khi focus hota hei , to parent par styling kar skte hei )
+
+21. UseLayoutEffect ( runs syncronously , before the screen is updated ) whereas UseEffect ( runs asyncronously , after the screen is updated )
+
+22. UseTransition Hook https://www.youtube.com/shorts/Ig1QWaxQVHk?feature=share
+
+23. Always use Form whenever you are using input fields . Specally in case of validation cases.
+      When you apply empty validation . So make sure the value should be trim(); because what if user enter 2-3 space and enter the value then           validation won't work in that case.
+
+24. How to use two references on same element ?
+ref={ ( node ) => {
+     containerRef.current = node;
+          if ( listRef ) {
+                listRef.current = node;
+          }
+  } }
+Here, if condition is because listRef is using as a forwadRef here . But there are chances that we don't need to use forward ref everywhere.
+U can check Dropdown Component to get better understanding.
+
+25. How to pass DYNAMIC COLOR ON CSS ?
+JS =======> style={ { '--ripple-var': fill } }
+CSS ======> background-color: var(--ripple-var);
+
+26. useDeferredValue ( Deffered means delayed for or until a stated time ) https://youtu.be/yIpHTYo3PY0 , https://youtu.be/kpcfdMBVqyg
+It is used to fix the slow render problem by implementing a delay before some information is calculated which is similar way to debouncing and throttling . So by using this, value will only be calculated after the important state updates have finished running.
+
+27. useImperativeHandle  https://youtu.be/D1l3ATbI5WM
+This hook is used to allows the functions or properties of child component to the parent component, which can be accessed through the ref . You might be thinking of forwardREf also works in same way . Check DIfference
+
+28. useId Hook : https://youtu.be/OvXEVuKtmfU
+It is used to create unique ID'S . It creates new random unique ID on every render
+USECASE On Above video
+
+29. How to patch Git Code ?
+A) Create :
+git diff --cached > mypatch.patch
+B) APPLY :
+git apply patch_file.patch
+
+30. Study on getBoundingClientRect(), scrollHeight, clientHeight
+
+31. Biggest mistake in my coding career
+A) Fast code : Always do slow code and think what u r writing and make it optimized from day 1
+B) Kbhi dusre project par jaaye , to khi dusre project ka code aise hi without dkhe na copy paste karde , kya pata kuch add kiya ho. ALso, check all the conditions if u are new to project
+C) Always Always Always Always Always Test on all screens . Small to Large
+
+32. Always give bottom styling . Not top styling to any element to add any UI. Kyuki kbhi koi container beech mei add hua to u will have the chance to make style in better way
+
+33. CSS transitions do not work with the display property. Instead, you can achieve a similar effect using the opacity property combined with visibility
+{
+        opacity: 0;
+        visibility: hidden;
+        transition: all 4s ease;
+}
+
+&.bwf-open {
+            opacity: 1;
+            visibility: visible;
+  }
+
+34. REACT 19 -
+a) in REact 19 , we will not have to use some optimization things like useMemo, useCallback, memo . React complier will handle all these things by itself.
+b) THere will be one hook name use() . SO before that, before fetching data we need to use useeffect to call the api and we used to store data by using useState hook. so there will be no need to use these 2 hooks . use() hook will handle it.
+c) ALso there will no hook for useContext . THat will also handled by use() hook.
+d) Also, we don't need to use <COntext.Provider />
+e) There will be no forwardref ( forwardref will become normal ref )  and lazy thing in React 19
+
+35. Never do like this ===>   setList( [ ...list, data ] );      but
+        do like this ===>  setList( prevList  => [ ...prevList, data ] );      // Because of only this , i got stucked in Removing List of Snackbar after some interval of time.
+
+36. Transform : translate agar use hota hei to vo element sbse upar aa jaata hei . Z-INDEX bhi work nhi karta fir . EXAMPLE MODAL CASE . BUT WHY WORKING ON FB ?
+
+37. node-sass-glob-importer ==> No need to import './style.scss' on every file . Just import in global styling ==> @import "./components/**/*.scss"; .
+The reason of using this package is CHunk issue . Agar bwf-tile style use hoti hei 4-4 pages mei to 4-4 baar import hogi but using this module. It will not
+
+38. Always take a brief about Project and ask as many question as you want. 2) If you have even 1% doubt, make an issue and assign directly on group . If there's some mistake at your end. So, they will not blaim you ki atleast you asked
+
+39. If there are multiple inputs and all these inputs will go API Payload. Then don't make state separately. Instead make one ==> and store the values to one State Object .
+For example ==> value={pipeline}
+    onChange={(val) => {
+    setInputValues({...props, pipeline: val})
+    }}
+
+40. V.V.V.V.V.V.V.. IMPORTANT LEARNING ==>
+ ALWAYS REMEMBER
+data.item.product ❌  data?.item?.product ✅  &
+
+ALWAYS DO DISTRUCTURING AND PASS INITIAL VALUE WHERE POSSIBLE IS . FOR EXAMPLE
+{item = ""} = data; ✅
+item?.product ✅
+
+40. EVENT DELEGATION - We know the concept of Event Bubbling & Event capturing. Now let's assume we have this html
+<div id="grandParent">
+  <div id="parent">
+    <div id="child"></div>
+  </div>
+</div>
+
+Now if i click on above structure, event propogation will happen. But i want if i click on parent, then show parent on console,  i want if i click on child, then show child on console, same for grandParent. SO it means we have to add event listener to every case but in all cases, event propogation will also add. SO EVENT DELEGATION says, apply add event on grandParent div and apply consition. FOr example ==>
+
+document.getElementById("grandParent").addEventListener('click', (event) => {
+if(event.target.id === "grandParent") console.log("grandParent clicked");
+else if(event.target.id === "parent") console.log("Parent clicked");
+else if(event.target.id === "child") console.log("Child clicked");
+})
+  https://www.freecodecamp.org/news/event-delegation-javascript/
+
+41. call, apply, bind ==>
+call: Invokes the function immediately with this where we pass arguments separately.
+apply: Invokes the function immediately with this where we pass arguments in an array.
+bind:  bind is also similar to call but instead of invoking function immediately, it returns a new function  with this  where we can use this function later and here also we pass arguments separately.
+
+42. Differece between Shallow copy and deep copy ==>
+
+When we do SHallow copy, and when we changed the shallow copy object then original object also get affected but when we do Deep copy and when we change deep copy object then original object doesnot change. And, we can do shallow copy by  Object.assign & spread operators whereas we can do deep copy by  Json.parse, Json.stringify and deep clone using lodash library
+
+But there are some limitation:
+1) When we do shallow copy then it orginal object will change only on it's nested object. otherwise, it will remain same.
+const original = { a: 1, b: { c: 2 } };
+const shallowCopy = Object.assign({}, original);
+
+shallowCopy.b.c = 3;
+console.log(original.b.c);   but if original has 3 and after shallowCopy, we original.b then it holds it's original state.
+
+2) When we do JSON.parse(JSON.stringify(data)) then if we are using function inside original object. And, after deepclone, it will give undefined. SO that's why it's better to do deep clone with lodash library.
+
+43. First class Functions / First class Citizens
+First class Functions can be passed to another function as an argument and can return from other function. For example ==>
+const randomFun = function() { return "Random"; };
+
+function callingFunc(referenceFunc) { return referenceFunc(); }
+
+console.log(callingFunc(randomFun)); // Output: "Random"
+
+43. Core Web Vitals: It is used to determine site performance from a user experience perspective.
+Basically, Better scores = better user experience = higher SEO rankings.
+
+There are three major Core Web Vitals:
+1) Largest Contentful Paint (LCP): It determines how much time our site is taking to load largest visible element on the page (like an image or block of text).
+And, we had solved this problem by using bundler. Like, when we do creat-react-app. It uses webpack behind the scenes. SO in my current organization, we had created the project from the start and used 'Parcel' bundler. ANd, let's say largest visible element on the page is block of text. SO in case, if we are using different font family. So when user comes to the site. Instead of waiting to load the font family. we can use font-display: swap; property. So when the site is loading and font family is loading. We will use users' system bydefault font family and once it loads properly. Then by using font-display property. It will swap the font family.
+
+Also, it doesnot calculate the whole page largest visible element. It calculates the visible part only. When i cscroll. It will calculate again.
+
+Good LCP: Should be 2.5 seconds or faster.
+
+2) First Input Delay (FID): It determines how much time our site is taking to RESPOND when a user first tries to interact with it (like clicking a button or a link). We can reduce the time by using less CSS, not using external library code much, reduce JS execution time.
+
+Good FID: Should be 100 milliseconds or faster.
+
+3) Cumulative Layout Shift (CLS): It tracks how much content is shifting while loading. Give any random site example ==> While the site is loading and assume, this heavy content is not leaded yet. But below the heavy content, we are using button. SO button will not be in it's actual position because when havy content loads, button position will change. SO in order to solve this problem. Always use fixed height. But, in the case of image, we cannot set fixed height, width on image container as well as on the image. SO we will simply use height width on image container. ANd let image use to take full space.
+
+Good CLS: Should be 0.1 or less.

@@ -1,0 +1,47 @@
+
+1) show databases;
+
+2) create database [db_name];
+
+3) use [db_name];
+
+4) drop database [db_name]   -- delete database
+
+5) create table [table_name] (col1 , col2, col3 , col4......);
+EG. create table laptops(lid int primary key, lmodel varchar(200) not null, studentId int(12));
+
+6) show tables;
+
+7) desc [tb_name];   -- Describe the table. Incase, you forgot what we are using
+
+8) drop table [table_name];
+
+9) alter table [old table name] rename to [new name]; 
+
+10) truncate table [table_name]; -- CLear all data in table
+
+11) -- Add data into table 
+insert into [table_name](id,name,city) values(12,'durgesh','delhi');
+insert intor [table_name] values(12,'ankit','kanpur');
+
+12) -- Update table || Add new colun  ( alter table [table_name] add col1 )
+alter table user add country varchar(200); 
+
+13) -- Rename
+-- A) Change the name of the table Student to Student_Details.
+alter table Student rename to Student_Details;
+
+-- B) Change the column name
+alter table Student rename column country to my_country;
+
+14) -- Update table data ( update [table_name] set col= value , col = value where col=value )
+update Student set my_country= 'INDIA' where stedent_ID=12;
+
+15) -- DELETE table data
+-- A) Delete all columns
+delete from Student;
+
+-- B) Delete all columns specific column
+delete from Student where stedent_ID=12;
+
+16)
